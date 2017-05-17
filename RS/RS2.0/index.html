@@ -7,21 +7,15 @@
 		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
 		<style type="text/css">
 			body,html{height: 100%;}
+			.rs-lrp5{padding-left: 5px;padding-right: 5px;}
 			#rs-pageHeader,#rs-pageFooter{position:absolute;width:100%;z-index: 1;}
 			#rs-pageHeader{top:0;background-color: #0BF;padding: 15px 0 0 15px;color: #FFF;box-shadow: 0 -2px 4px #666 inset;}
-			#rs-pageMain{position:relative;height: 100%;width: 100%;padding-top: 118px;padding-bottom: 64px;}
-			#rs-pageFooter{bottom:0;text-align: center;}
 			#rs-userInfo{position:relative;display:block;text-align: right;vertical-align: middle;color: inherit;}
 			#rs-userInfo>span{color: #666;}
-			.rs-lrp5{padding-left: 5px;padding-right: 5px;}
+			#rs-pageMain{position:relative;height: 100%;width: 100%;padding-top: 118px;padding-bottom: 64px;}
+			#rs-frameCenter{margin-left:150px;height: 100%;}
+			#rs-pageFooter{bottom:0;text-align: center;}
 		</style>
-		<script type="text/javascript">
-			function changeFrameHeight(){
-			    var ifm= document.getElementById("myiframe");
-			    ifm.height=document.getElementById("rs-frameCenter").clientHeight;
-			}
-			window.onresize=function(){changeFrameHeight();} 
-		</script>
 	</head>
 	<body>
 		<div id="rs-pageHeader">
@@ -42,8 +36,8 @@
 				<a class="btn btn-block btn-info" href="bbb.html" target="center">bbb</a>
 				<a class="btn btn-block btn-info" href="ccc.html" target="center">ccc</a>
 			</div>
-			<div id="rs-frameCenter" style="margin-left:150px;height: 100%;">
-				<iframe name="center" src="main.html" id="myiframe" onload="changeFrameHeight()" width="100%" height="100%" frameborder="no" ></iframe>
+			<div class="embed-responsive" id="rs-frameCenter">
+				<iframe class="embed-responsive-item" name="center" src="main.html" width="100%" height="100%"></iframe>
 			</div>
 		</div>
 		<div id="rs-pageFooter">
