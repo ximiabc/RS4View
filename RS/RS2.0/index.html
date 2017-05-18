@@ -5,16 +5,30 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 		<title>入学报名信息管理系统</title>
 		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+		<script src="js/jquery-3.0.0.min.js"></script>
+		<script src="js/tab.js"></script>
 		<style type="text/css">
 			body,html{height: 100%;min-width: 560px;}
 			.rs-lrp5{padding-left: 5px;padding-right: 5px;}
-			#rs-pageHeader,#rs-pageFooter{position:absolute;width:100%;z-index: 1;min-width: 560px;}
-			#rs-pageHeader{top:0;background-color: #0BF;padding: 15px 0 0 15px;color: #FFF;box-shadow: 0 -1px 5px #666 inset;}
+			#rs-pageHeader,#rs-pageFooter{position:absolute;width:100%;z-index: 2;min-width: 560px;}
+			#rs-pageHeader{top:0;background-color: #0BF;padding-left:20px;color: #FFF;box-shadow: 0 -1px 5px #666 inset;}
 			#rs-userInfo{position:relative;display:block;text-align: right;vertical-align: middle;color: inherit;}
 			#rs-userInfo>span{color: #666;}
-			#rs-pageMain{position:relative;height: 100%;width: 100%;padding-top: 118px;padding-bottom: 64px;}
-			#rs-frameCenter{margin-left:150px;height: 100%;}
-			#rs-pageFooter{bottom:0;text-align: center;}
+			#rs-pageMain{position:relative;height: 100%;width: 100%;padding-top: 103px;padding-bottom: 64px;}
+			#rs-frameCenter{margin-left:200px;height: 100%;}
+			#rs-pageFooter{bottom:0;text-align: center;background-color: #FFF;}
+			
+			.rs-tab {padding-top: 103px;padding-bottom: 64px;width: 200px;height:100%;border-right: 1px solid #CCCCCC;color:#555;font-size: 14px;text-align: center;position: absolute;top: 0px;}
+			.rs-summary {height: 40px;line-height: 40px;cursor: pointer;font-size: 16px;position: relative;border-bottom: #ccc 1px dotted;transition: background-color .6s linear;-moz-transition: background-color .6s linear;-webkit-transition: background-color .6s linear;-o-transition: background-color .6s linear;}
+			.rs-summary:hover{color:#000;}
+			.rs-permissions,.rs-apply,.rs-school,.rs-student,.rs-teacher,.rs-personal{position: absolute;height: 20px;width: 20px;top: 15px;left: 30px;opacity: 0.6;}
+			.rs-detailed {display: none;font-size: 14px;}
+			.rs-detailed ul {margin: 0;padding: 0;}
+			.rs-detailed li {height: 40px;line-height: 40px;list-style: none;background-color:rgba(0,188,255,.6);;border-bottom: #ccc 1px dotted;text-align: center;} 
+			.rs-detailed li a{color: #FFFFFF;text-decoration: none;display:inline-block;width:100%;height: 40px;}
+			.rs-detailed li a:hover{text-decoration: none;color:#FFFFFF; font-size: 16px;}
+			.rs-detailed li a:focus{color:#000000;font-size: 16px;}
+            .active{background-color:#0BF;}
 		</style>
 	</head>
 	<body>
@@ -31,11 +45,97 @@
 			</span>
 		</div>
 		<div id="rs-pageMain">
-			<div id="" style="position:absolute;width: 150px;">
-				<a class="btn btn-block btn-info" href="aaa.html" target="center">aaa</a>
-				<a class="btn btn-block btn-info" href="bbb.html" target="center">bbb</a>
-				<a class="btn btn-block btn-info" href="ccc.html" target="center">ccc</a>
+			<div class="rs-tab bg-info">
+			<!--Manager-->  
+			<div class="rs-summary">
+				<div class="rs-permissions glyphicon glyphicon-th-list"></div>权限管理
 			</div>
+			<div class="rs-detailed">
+				<ul>
+					<li>
+						<a href="#">管理教委</a>
+					</li>
+					<li>
+						<a href="#">管理学校</a>
+					</li>
+					<li>
+						<a href="#">管理教师</a>
+					</li>
+				</ul>
+			</div>
+			<!--Apply  -->
+			<div class="rs-summary">
+				<div class="rs-apply glyphicon glyphicon-list-alt"></div>报名管理
+			</div>
+			<div class="rs-detailed">
+				<ul>
+					<li>
+						<a href="#">报名时间管理</a>
+					</li>
+					<li>
+						<a href="#">报名字段管理</a>
+					</li>
+					<li>
+						<a href="#">报名模版管理</a>
+					</li>
+				</ul>
+			</div>
+			<!--School  -->
+			<div class="rs-summary">
+				<div class="rs-school glyphicon glyphicon-briefcase"></div>学校管理
+			</div>
+			<div class="rs-detailed">
+				<ul>
+					<li>
+						<a href="#">增删改查</a>
+					</li>
+					<li>
+						<a href="#">报名人数管理</a>
+					</li>
+				</ul>
+			</div>
+			<!--Teacher  -->
+			<div class="rs-summary">
+				<div class="rs-teacher glyphicon glyphicon-inbox"></div>教师管理
+			</div>
+			<div class="rs-detailed">
+				<ul>
+					<li>
+						<a href="#">增删改查</a>
+					</li>
+				</ul>
+			</div>
+			<!--Student  -->
+			<div class="rs-summary">
+				<div class="rs-student glyphicon glyphicon-tasks"></div>学生管理
+			</div>
+			<div class="rs-detailed">
+				<ul>
+					<li>
+						<a href="#">增删改查</a>
+					</li>
+					<li>
+						<a href="#">认证审核</a>
+					</li>
+					<li>
+						<a href="#">批量导入</a>
+					</li>
+				</ul>
+			</div>
+			<!--Person  -->
+			<div class="rs-summary">
+				<div class="rs-personal glyphicon glyphicon-user"></div>个人管理
+			</div>
+			<div class="rs-detailed">
+				<ul>
+					<li>
+						<a href="#">查改</a>
+					</li>
+				</ul>
+			</div>
+			<!--end  -->
+		</div>
+			
 			<div class="embed-responsive" id="rs-frameCenter">
 				<iframe class="embed-responsive-item" name="center" src="main.html" width="100%" height="100%"></iframe>
 			</div>
