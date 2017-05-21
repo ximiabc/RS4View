@@ -3,8 +3,77 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+		<style type="text/css">
+			.drag-item{position: absolute;opacity: .8;}
+			.placeholder{position:relative;border: 2px dashed rgba(0,188,255,.6);}
+			.slot-item{padding-right:40px;line-height: 1;}
+			.slot-item .glyphicon{display: block;position: absolute;top: 0;right: 0;padding: 10px 15px;}
+		</style>
 	</head>
 	<body>
-		bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+			<div id="dragslot" class="slot">
+				<ul class="list-group slot-list text-center">
+					<li class="list-group-item slot-item">Cras justo odio
+						<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
+					</li>
+					<li class="list-group-item slot-item">Dapibus ac facilisis in
+						<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
+					</li>
+					<li class="list-group-item slot-item">Morbi leo risus
+						<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
+					</li>
+					<li class="list-group-item slot-item">Porta ac consectetur ac
+						<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
+					</li>
+					<li class="list-group-item slot-item">Vestibulum at eros
+						<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
+					</li>
+					<li class="list-group-item slot-item">Cras justo odio
+						<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
+					</li>
+					<li class="list-group-item slot-item">Dapibus ac facilisis in
+						<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
+					</li>
+					<li class="list-group-item slot-item">Morbi leo risus
+						<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
+					</li>
+					<li class="list-group-item slot-item">Porta ac consectetur ac
+						<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
+					</li>
+					<li class="list-group-item slot-item">Vestibulum at eros
+						<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
+					</li>
+					<li class="list-group-item slot-item">Cras justo odio
+						<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
+					</li>
+					<li class="list-group-item slot-item">Dapibus ac facilisis in
+						<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
+					</li>
+					<li class="list-group-item slot-item">Morbi leo risus
+						<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
+					</li>
+					<li class="list-group-item slot-item">Porta ac consectetur ac
+						<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
+					</li>
+					<li class="list-group-item slot-item">Vestibulum at eros
+						<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
+					</li>
+				</ul>
+			</div>
+		<script src="js/jquery-3.0.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/dragslot.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$('.slot-item').on('mousedown','.glyphicon',function(e){
+//				e.preventDefault();
+				e.stopPropagation();
+				alert(123);
+			});
+			jQuery(function($){
+				$('#dragslot').dragslot({
+					dropCallback: function(el){/*alert(el);*/}
+				});
+			});
+		</script>
 	</body>
 </html>
