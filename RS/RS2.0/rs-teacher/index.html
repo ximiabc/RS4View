@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<title>教师管理</title>
+		<link rel="stylesheet" type="text/css" href="../bootstrap-3.3.7-dist/css/bootstrap.css"/>
+		<script src="../js/jquery-3.0.0.min.js"></script>
+		<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+		<script src="../js/Formtext.js"></script>
+		<style>
+		    .rs-school-height{margin-top: 30px;padding-bottom:50px;}
+		    .rs-school-btn{position: absolute;top: 30px;right: 20px;}
+			.rs-school-spacing{margin:0 10px;}
+			.rs-school-center{text-align: center;}
+			.rs-school-space{width: 140px;margin: 0 auto;}
+			.rs-school-nav{width: 400px;}
+			.text{background-color: #00BBFF;}
+			@media (max-width: 765px){.rs-school-btn{position:absolute;top:100px;}}
+			/*重构 popover */
+			.popover{border:1px solid #C00;color:#000;}
+			.popover .popover-content{padding:1px 5px;}
+			.popover.top>.arrow:after{border-top-color:#C00;}
+		</style>
+		</head>
+	<body>
+		<!--表单部分-->
+		<div>
+		<form class="form-inline rs-school-height">
+			<!--表单查询及添加-->
+			<div class="form-group col-lg-6 col-md-8 col-xs-8 col-sm-8 col-md-offset-4 col-sm-offset-2 col-xs-offset-4 col-lg-offset-6">
+				<!--下拉选项框-->
+				<select name="select_type" class="form-control col-md-2 col-sm-2 col-xs-2 rs-school-spacing">
+					<option selected="selected" value="1">所有学校</option>
+					<option value="2">学校账号</option>
+		    		<option value="3">学校名称</option>
+		    		<option value="4">教师账号</option>
+		    		<option value="4">教师名称</option>
+				</select>
+			    <input type="text" class="form-control col-md-2 col-sm-2 col-xs-2 col-lg-2 col-xs-2 rs-school-spacing" placeholder="number">
+			    <button type="submit" class="btn btn-default col-sm-2 col-md-2 col-xs-2 rs-school-spacing" style="">检索</button>
+			    </div>
+		</form>
+		<button type="submit" class="btn btn-default rs-school-btn" data-toggle="modal" data-target="#myModal-1">增加教师</button>
+		</div>
+		<!--数据表格部分--> 
+		<div class="table-responsive col-xs-12 col-md-12">
+			<table class="table table-striped table-bordered table-hover table-condensed rs-school-center">
+				<thead>
+					<tr class="info">
+						<td>学校编号</td>
+						<td>学校名字</td>
+						<td>教师账号</td>
+						<td>教师姓名</td>
+						<td>联系电话</td>
+						<td>家庭地址</td>
+						<td>备注</td>
+						<td>操作</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>23743253</td>
+						<td>只用于</td>
+						<td>45374353</td>
+						<td>张一样</td>
+						<td>15132121515</td>
+						<td>国赛还得好贵的</td>
+						<td>国赛还得好贵的</td>
+						<td>
+							<div class="rs-school-space">
+							<input class="btn btn-default" type="submit" value="删除">
+							<button class="btn btn-default" type="submit" data-toggle="modal" data-target="#myModal-2">更改</button>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>23743253</td>
+						<td>只用于</td>
+						<td>45374353</td>
+						<td>张一样</td>
+						<td>15132121515</td>
+						<td>国赛还得好贵的</td>
+						<td>国赛还得好贵的</td>
+						<td>
+							<div class="rs-school-space">
+							<input class="btn btn-default" type="submit" value="删除">
+							<button class="btn btn-default" type="submit" data-toggle="modal" data-target="#myModal-2">更改</button>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>23743253</td>
+						<td>只用于</td>
+						<td>45374353</td>
+						<td>张一样</td>
+						<td>15132121515</td>
+						<td>国赛还得好贵的</td>
+						<td>国赛还得好贵的</td>
+						<td>
+							<div class="rs-school-space">
+							<input class="btn btn-default" type="submit" value="删除">
+							<button class="btn btn-default" type="submit" data-toggle="modal" data-target="#myModal-2">更改</button>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!-- Modal 2-->
+		<div class="modal fade" id="myModal-1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+			    <div class="modal-content">
+				    <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				        <h4 class="modal-title" id="myModalLabel">增加教师</h4>
+				    </div>
+				    <div class="modal-body">
+				       <form class="form-horizontal">
+							<div class="form-group">
+							    <label for="inputText" class="col-sm-4 control-label">学校编号</label>
+							    <label for="inputText" class="col-sm-4 control-label">100145</label>
+							</div>
+							<div class="form-group">
+							    <label for="inputText" class="col-sm-4 control-label">教师编号</label>
+							    <label for="inputText" class="col-sm-4 control-label">245353</label>
+							</div>
+							<div class="form-group">
+							    <label for="inputText" class="col-sm-4 control-label">教师姓名</label>
+							    <label for="inputText" class="col-sm-4 control-label">都一样</label>
+							</div>
+							<div class="form-group">
+							    <label for="inputText" class="col-sm-4 control-label">联系电话</label>
+							    <div class="col-sm-6">
+							      <input type="text" class="form-control" id="inputText" placeholder="联系电话" data-vaild="^(1[\d]{10}|0\d{2,3}\-\d{7,8})$" data-errmsg="联系电话格式错误"/>
+							    </div>
+							</div>
+							<div class="form-group">
+							    <label for="inputText" class="col-sm-4 control-label">家庭地址</label>
+							    <div class="col-sm-6">
+							      <input type="text" class="form-control" id="inputText" placeholder="家庭地址" data-vaild="^[\u4e00-\u9fa5]{2,30}$" data-errmsg="请填写家庭地址，只能为中文"/>
+							    </div>
+							</div>
+							<div class="form-group">
+							    <label for="inputText" class="col-sm-4 control-label">相关备注</label>
+							    <div class="col-sm-6">
+							      <input type="text" class="form-control" id="inputText" placeholder="相关备注" data-vaild="^[\u4e00-\u9fa5]{2,30}$" data-errmsg="请填写相关备注，只能为中文"/>
+							    </div>
+							</div>
+							<div class="modal-footer">
+						        <input type="button" class="btn btn-default less" data-dismiss="modal" value="取消"/>
+						        <input type="button" class="btn btn-primary less" value="确认添加"/>
+						    </div>
+		                </form>
+				    </div>
+			    </div>
+			</div>
+		</div>
+		<!-- Modal 3-->
+		<div class="modal fade" id="myModal-2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+			    <div class="modal-content">
+				    <div class="modal-header">
+				        <button type="button" class="close less" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				        <h4 class="modal-title" id="myModalLabel">增加教师</h4>
+				    </div>
+				    <div class="modal-body">
+				       <form class="form-horizontal">
+							<div class="form-group">
+							    <label for="inputText" class="col-sm-4 control-label">学校编号</label>
+							    <label for="inputText" class="col-sm-4 control-label">100145</label>
+							</div>
+							<div class="form-group">
+							    <label for="inputText" class="col-sm-4 control-label">教师编号</label>
+							    <label for="inputText" class="col-sm-4 control-label">245353</label>
+							</div>
+							<div class="form-group">
+							    <label for="inputText" class="col-sm-4 control-label">教师姓名</label>
+							    <label for="inputText" class="col-sm-4 control-label">都一样</label>
+							</div>
+							<div class="form-group">
+							    <label for="inputText" class="col-sm-4 control-label">联系电话</label>
+							    <div class="col-sm-6">
+							      <input type="text" class="form-control" id="inputText" placeholder="联系电话" data-vaild="^(1[\d]{10}|0\d{2,3}\-\d{7,8})$" data-errmsg="联系电话格式错误"/>
+							    </div>
+							</div>
+							<div class="form-group">
+							    <label for="inputText" class="col-sm-4 control-label">家庭地址</label>
+							    <div class="col-sm-6">
+							      <input type="text" class="form-control" id="inputText" placeholder="家庭地址" data-vaild="^[\u4e00-\u9fa5]{2,30}$" data-errmsg="请填写家庭住址，只能为中文"/>
+							    </div>
+							</div>
+							<div class="form-group">
+							    <label for="inputText" class="col-sm-4 control-label">相关备注</label>
+							    <div class="col-sm-6">
+							      <input type="text" class="form-control" id="inputText" placeholder="相关备注" data-vaild="^[\u4e00-\u9fa5]{2,36}$" data-errmsg="请填写相关备注，只能为中文"/>
+							    </div>
+							</div>
+							<div class="modal-footer">
+						        <input type="button" class="btn btn-default less" data-dismiss="modal" value="取消"/>
+						        <input type="button" class="btn btn-primary less" value="确认更改"/>
+						    </div>
+		                </form>
+				    </div>
+			    </div>
+			</div>
+		</div>
+		<script type="text/javascript">
+              $("form").Vaild();
+              //	清除提示
+            	setInterval(function(){
+            	if($('#myModal-1').css("display") == "block" || $('#myModal-2').css("display") == "block" || $('#myModal-3').css("display") == "block"){
+					return true;
+				}else{
+				   posclear();
+				}
+				},100);
+			
+			$('.less').on('click',function(){
+				posclear();
+			});
+			
+			function posclear(){
+				$('.popover').css('display','none');
+				$('.modal-body .form-group').find("div").removeClass("has-error");
+				$('.modal-body .form-group').find("div").removeClass("has-success");
+			}
+		</script>
+		<!--分页-->
+		<div class="rs-school-nav center-block">
+			<nav aria-label="Page navigation">
+			  <ul class="pagination">
+			  	<li><a href="#" aria-label="Previous"><span aria-hidden="true">首页</span></a></li>
+			    <li><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+			    <li><a href="#">1</a></li>
+			    <li><a href="#">2</a></li>
+			    <li><a href="#">3</a></li>
+			    <li><a href="#">4</a></li>
+			    <li><a href="#">5</a></li>
+			    <li><a href="#" aria-label="Next"> <span aria-hidden="true">&raquo;</span></a></li>
+			     <li><a href="#" aria-label="Previous"><span aria-hidden="true">尾页</span></a></li>
+			  </ul>
+			</nav>
+		</div>
+	</body>
+</html>
