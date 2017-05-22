@@ -9,8 +9,16 @@
 			#rs-wrap{margin: 6%;}
 			.drag-item{position: absolute;opacity: .8;}
 			.placeholder{position:relative;border: 2px dashed rgba(0,188,255,.6);}
-			.slot-item{padding-right:40px;line-height: 1;}
-			.slot-item .glyphicon{display: block;position: absolute;top: 0;right: 0;padding: 10px 15px;}
+			.slot-item{padding-right:40px;line-height: 1;cursor: pointer;}
+			.slot-item .glyphicon{
+				position: absolute;top: 0;right: 0;padding: 10px 15px;
+				transition: background-color .3s;
+				-moz-transition: background-color .3s;
+				-webkit-transition: background-color .3s;
+				-o-transition: background-color .3s;
+			}
+			.slot-item .glyphicon:hover{background-color: rgba(0,188,255,.6);}
+			.btn-group-justified  .glyphicon{top: 3px;}
 		</style>
 	</head>
 	<body>
@@ -34,68 +42,166 @@
 							</div>
 						</div>
 					</div>
-					<div id="dragslot" class="slot col-md-offset-0 col-md-8 col-xs-offset-1 col-xs-10">
-						<ul class="list-group slot-list text-center">
-							<li class="list-group-item slot-item">Cras justo odio
-								<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
-							</li>
-							<li class="list-group-item slot-item">Dapibus ac facilisis in
-								<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
-							</li>
-							<li class="list-group-item slot-item">Morbi leo risus
-								<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
-							</li>
-							<li class="list-group-item slot-item">Porta ac consectetur ac
-								<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
-							</li>
-							<li class="list-group-item slot-item">Vestibulum at eros
-								<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
-							</li>
-							<li class="list-group-item slot-item">Cras justo odio
-								<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
-							</li>
-							<li class="list-group-item slot-item">Dapibus ac facilisis in
-								<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
-							</li>
-							<li class="list-group-item slot-item">Morbi leo risus
-								<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
-							</li>
-							<li class="list-group-item slot-item">Porta ac consectetur ac
-								<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
-							</li>
-							<li class="list-group-item slot-item">Vestibulum at eros
-								<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
-							</li>
-							<li class="list-group-item slot-item">Cras justo odio
-								<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
-							</li>
-							<li class="list-group-item slot-item">Dapibus ac facilisis in
-								<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
-							</li>
-							<li class="list-group-item slot-item">Morbi leo risus
-								<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
-							</li>
-							<li class="list-group-item slot-item">Porta ac consectetur ac
-								<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
-							</li>
-							<li class="list-group-item slot-item">Vestibulum at eros
-								<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
-							</li>
-						</ul>
+					<div class="col-md-offset-0 col-md-8 col-xs-offset-1 col-xs-10">
+						<div class="btn-group btn-group-justified" role="group">
+							<div class="btn-group" role="group">
+								<button type="button" class="btn btn-default btn-info btn-lg">
+									<span class="glyphicon glyphicon-download" aria-hidden="true"></span>
+									上传报名表
+								</button>
+							</div>
+							<div class="btn-group" role="group">
+								<button id="rs-toggleSave" type="button" class="btn btn-default btn-info btn-lg">
+									<span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
+									下载报名表
+								</button>
+							</div>
+						</div>
+						<button id="rs-saveItem" type="button" class="btn btn-warning btn-block hidden">保存</button>
+						<div id="dragslot" class="slot">
+							<ul class="list-group slot-list text-center" style="margin-bottom: 0px;">
+								<li id="slot-item" class="list-group-item slot-item">姓名
+									<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
+								</li>
+								<li class="list-group-item slot-item">性别
+									<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
+								</li>
+								<li class="list-group-item slot-item">民族
+									<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
+								</li>
+								<li class="list-group-item slot-item">身份证号
+									<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
+								</li>
+								<li class="list-group-item slot-item">报名学校
+									<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
+								</li>
+								<li class="list-group-item slot-item">入学前幼儿园
+									<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
+								</li>
+								<li class="list-group-item slot-item">家庭地址
+									<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
+								</li>
+								<li class="list-group-item slot-item">所在居委会
+									<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
+								</li>
+								<li class="list-group-item slot-item">监护人1姓名
+									<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
+								</li>
+								<li class="list-group-item slot-item">监护人1电话
+									<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
+								</li>
+								<li class="list-group-item slot-item">监护人1身份证号
+									<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
+								</li>
+								<li class="list-group-item slot-item">监护人2姓名
+									<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
+								</li>
+								<li class="list-group-item slot-item">监护人2电话
+									<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
+								</li>
+								<li class="list-group-item slot-item">监护人2身份证号
+									<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
+								</li>
+								<li class="list-group-item slot-item">学生类型
+									<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
+								</li>
+							</ul>
+						</div>
+						<div class="input-group">
+							<div class="input-group-addon">添加报名表字段名</div>
+							<input id="rs-addItemText" type="text" class="form-control">
+							<span class="input-group-btn">
+								<button id="rs-addItem" class="btn btn-default" type="button">
+									<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+									添加
+								</button>
+							</span>
+						</div>
 					</div>
 				</div>
-				<!--<div class="panel-footer clearfix">
-					
-				</div>-->
+				<!--<div class="panel-footer clearfix"></div>-->
+			</div>
+		</div>
+		<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel">
+			<div class="modal-dialog modal-sm" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="editModalLabel">编辑字段名</h4>
+					</div>
+					<div class="modal-body">
+					    <div class="input-group">
+							<div class="input-group-addon">字段名</div>
+							<input type="text" id="rs-modalText" class="form-control">
+						</div>
+					</div>
+		    		<div class="modal-footer">
+		    			<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+		    			<button type="button" id="rs-modalDelete" class="btn btn-danger">删除</button>
+		    			<button type="button" id="rs-modalEdit" class="btn btn-primary">更改</button>
+		    		</div>
+				</div>
 			</div>
 		</div>
 		<script src="../js/jquery-3.0.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/dragslot.js" type="text/javascript" charset="utf-8"></script>
 		<script>
 			$('.slot-item').on('mousedown','.glyphicon',function(e){
-//				e.preventDefault();
+				var slotItem = $(this).parent();
 				e.stopPropagation();
-				alert(123);
+				$('#editModal').modal('show');
+				//设置模态框中文本
+				$('#rs-modalText').val($.trim(slotItem.text()));
+				//点击删除，删除此节点
+				$('#rs-modalDelete').click(function(){
+					slotItem.remove();
+					$('#editModal').modal('hide');
+					$('#rs-saveItem').removeClass("hidden");
+				});
+				//点击修改，修改此节点值
+				$('#rs-modalEdit').click(function(){
+					slotItem.html($('#rs-modalText').val());
+					slotItem.append('<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>');
+					$('#editModal').modal('hide');
+					$('#rs-saveItem').removeClass("hidden");
+				});
+			});
+			/*
+			 * 写一个字段名校验（添加和修改两个地方都要用）
+			 * 写一个获取列表值得方法
+			 * 写一个判断是否需要保存的“可行性”的方法
+			 */
+			//点击添加
+			$('#rs-addItem').click(function(){
+				var addText = $('#rs-addItemText').val();
+				//缺少一套对添加字段的校验
+				$('.slot-list').append('<li class="list-group-item slot-item">'+addText+
+					'<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span></li>');
+				$('#rs-addItemText').val('');
+				$('#rs-saveItem').removeClass("hidden");
+			});
+			//点击保存
+			$('#rs-saveItem').click(function(){
+				//获取当前页面上字段名列表中的值
+				var itemList = [];
+				$('.slot-item').each(function(){
+					itemList.push($.trim($(this).text()));
+				});
+				console.log("itemList的类型为：" + typeof(itemList) + "\nitemList的长度为："+itemList.length + "\nitemList的值为："+itemList);
+				$('#rs-saveItem').addClass("hidden");
+				//通过Ajax提交信息到后台
+//				$.ajax({
+//					contentType: "application/x-www-form-urlencoded; charset=UTF-8", 
+//					type: "POST", 	
+//					url: "",/*地址*/
+//					data: {itemList : itemList},/*传参*/
+//					dataType: "json",
+//					success: function(data){
+//						$('#rs-saveItem').addClass("hidden");
+//					},
+//					error: function(jqXHR){alert(jqXHR.status);}
+//				});
 			});
 			jQuery(function($){
 				$('#dragslot').dragslot({
