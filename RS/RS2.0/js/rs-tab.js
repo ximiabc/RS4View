@@ -5,4 +5,6 @@
 					$(this).next("div").slideToggle("slow").siblings(".rs-detailed").slideUp("slow");
 				    $(this).siblings(".rs-summary").removeClass("active");
 				});
+				
+				
              });
