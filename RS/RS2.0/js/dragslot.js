@@ -52,7 +52,6 @@
 			slotContainer.element.on(eStart, dragStartEvent);
 			$(window).on(eMove, dragMoveEvent);
 			$(window).on(eEnd, dragEndEvent);
-
 		},
 		_dragStart : function(e){
 			var target = $(e.target),
@@ -139,6 +138,8 @@
             	self.slotlist.closest('.' + self.options.slotClass).addClass(self.options.emptySlotClass);
             	self.slotlist[0].parentNode.removeChild(self.slotlist[0]);
             }
+            $('#rs-down').prop("disabled",true);
+            $('#rs-saveItem').removeClass("hidden");
 		}
 	}
 	
