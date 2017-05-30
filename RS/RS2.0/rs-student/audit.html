@@ -21,6 +21,17 @@
 			.popover{border:1px solid #C00;color:#000;}
 			.popover .popover-content{padding:1px 5px;}
 			.popover.top>.arrow:after{border-top-color:#C00;}
+			.form-horizontal .control-label{text-align: left;}
+			.form-horizontal .control-label.rs-right{text-align: right;}
+			.form-horizontal .control-label.rs-justify{
+				text-align: justify;
+				text-align: end; /* 对于除了IE之外的浏览器用尾对齐覆盖之前的两端对齐方式 */
+				-moz-text-align-last: justify;
+				-ms-text-align-last: justify;/* IE 8+ 支持 */
+				text-align-last: justify;/* IE5.5+ 支持 */
+				text-justify: distribute;
+				text-justify: inter-ideograph;/* IE 私有属性 */
+			}
 		</style>
 		</head>
 	<body>
@@ -122,86 +133,94 @@
 				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				        <h4 class="modal-title" id="myModalLabel">学生详细信息</h4>
 				    </div>
-				    <form class="form-horizontal">
-					    <div class="modal-body">
+					<div class="modal-body">
+				   		<form class="form-horizontal">
+				   			<div class="row">
 					       	<div class="form-group col-sm-6">
-								    <label for="inputText" class="col-sm-4 control-label">学生编号</label>
-								    <label for="inputText" class="col-sm-4 control-label">216000062105478985</label>
+							    <label for="inputText" class="col-sm-6 control-label rs-right">学生编号</label>
+							    <label for="inputText" class="col-sm-6 control-label">216000062105478985</label>
 							</div>
 							<div class="form-group col-sm-6">
-							    <label for="inputText" class="col-sm-4 control-label">学生姓名</label>
-							    <label for="inputText" class="col-sm-4 control-label">张宇说</label>
+							    <label for="inputText" class="col-sm-6 control-label rs-right">学生姓名</label>
+							    <label for="inputText" class="col-sm-6 control-label">张宇说</label>
 							</div>
 							<div class="form-group col-sm-6">
-							    <label for="inputText" class="col-sm-4 control-label">性别</label>
-							    <label for="inputText" class="col-sm-4 control-label">男</label>
+							    <label for="inputText" class="col-sm-6 control-label rs-right">性别</label>
+							    <label for="inputText" class="col-sm-6 control-label">男</label>
 							</div>
 							<div class="form-group col-sm-6">
-							    <label for="inputText" class="col-sm-4 control-label">民族</label>
-							    <label for="inputText" class="col-sm-4 control-label">汉族</label>
+							    <label for="inputText" class="col-sm-6 control-label rs-right">民族</label>
+							    <label for="inputText" class="col-sm-6 control-label">汉族</label>
 							</div>
 							<div class="form-group col-sm-6">
-							    <label for="inputText" class="col-sm-4 control-label">身份证号</label>
-							    <label for="inputText" class="col-sm-4 control-label">410106201005150034</label>
+							    <label for="inputText" class="col-sm-6 control-label rs-right">身份证号</label>
+							    <label for="inputText" class="col-sm-6 control-label">410106201005150034</label>
+							</div>
+							<!--<div class="form-group col-sm-6">
+							    <label for="inputText" class="col-sm-6 control-label">报名学校</label>
+							    <label for="inputText" class="col-sm-6 control-label">201600000621</label>
+							</div>-->
+							<div class="form-group col-sm-6">
+							    <label for="inputText" class="col-sm-6 control-label rs-right">入学前幼儿园</label>
+							    <label for="inputText" class="col-sm-6 control-label">实验幼儿园</label>
 							</div>
 							<div class="form-group col-sm-6">
-							    <label for="inputText" class="col-sm-4 control-label">报名学校</label>
-							    <label for="inputText" class="col-sm-4 control-label">201600000621</label>
+							    <label for="inputText" class="col-sm-6 control-label rs-right">家庭地址</label>
+							    <label for="inputText" class="col-sm-6 control-label">我凛真乌云社区</label>
 							</div>
 							<div class="form-group col-sm-6">
-							    <label for="inputText" class="col-sm-4 control-label">入学前幼儿园</label>
-							    <label for="inputText" class="col-sm-4 control-label">实验幼儿园</label>
+							    <label for="inputText" class="col-sm-6 control-label rs-right">家庭电话</label>
+							    <label for="inputText" class="col-sm-6 control-label">135255880563</label>
 							</div>
 							<div class="form-group col-sm-6">
-							    <label for="inputText" class="col-sm-4 control-label">家庭地址</label>
-							    <label for="inputText" class="col-sm-4 control-label">我凛真乌云社区</label>
+							    <label for="inputText" class="col-sm-6 control-label rs-right">所在居委会</label>
+							    <label for="inputText" class="col-sm-6 control-label">老在和促进</label>
 							</div>
 							<div class="form-group col-sm-6">
-							    <label for="inputText" class="col-sm-4 control-label">家庭电话</label>
-							    <label for="inputText" class="col-sm-4 control-label">135255880563</label>
+							    <label for="inputText" class="col-sm-6 control-label rs-right">监护人1姓名</label>
+							    <label for="inputText" class="col-sm-6 control-label">张贝</label>
 							</div>
 							<div class="form-group col-sm-6">
-							    <label for="inputText" class="col-sm-4 control-label">所在居委会</label>
-							    <label for="inputText" class="col-sm-4 control-label">老在和促进</label>
+							    <label for="inputText" class="col-sm-6 control-label rs-right">监护人1电话</label>
+							    <label for="inputText" class="col-sm-6 control-label">1362588062</label>
 							</div>
 							<div class="form-group col-sm-6">
-							    <label for="inputText" class="col-sm-4 control-label">监护人1姓名</label>
-							    <label for="inputText" class="col-sm-4 control-label">张贝</label>
+							    <label for="inputText" class="col-sm-6 control-label rs-right">监护人1身份证</label>
+							    <label for="inputText" class="col-sm-6 control-label">410121198009125432</label>
 							</div>
 							<div class="form-group col-sm-6">
-							    <label for="inputText" class="col-sm-4 control-label">监护人1电话</label>
-							    <label for="inputText" class="col-sm-4 control-label">1362588062</label>
+							    <label for="inputText" class="col-sm-6 control-label rs-right">监护人2姓名</label>
+							    <label for="inputText" class="col-sm-6 control-label">陈伟欧</label>
 							</div>
 							<div class="form-group col-sm-6">
-							    <label for="inputText" class="col-sm-4 control-label">监护人1身份证</label>
-							    <label for="inputText" class="col-sm-4 control-label">410121198009125432</label>
+							    <label for="inputText" class="col-sm-6 control-label rs-right">监护人2电话</label>
+							    <label for="inputText" class="col-sm-6 control-label">13679850000</label>
 							</div>
 							<div class="form-group col-sm-6">
-							    <label for="inputText" class="col-sm-4 control-label">监护人2姓名</label>
-							     <label for="inputText" class="col-sm-4 control-label">陈伟欧</label>
+							    <label for="inputText" class="col-sm-6 control-label rs-right">监护人2身份证</label>
+							    <label for="inputText" class="col-sm-6 control-label">410121198009125432</label>
 							</div>
 							<div class="form-group col-sm-6">
-							    <label for="inputText" class="col-sm-4 control-label">监护人2电话</label>
-							    <label for="inputText" class="col-sm-4 control-label">13679850000</label>
+							    <label for="inputText" class="col-sm-6 control-label rs-right">学生类型</label>
+							    <label for="inputText" class="col-sm-6 control-label">辖区内学生</label>
 							</div>
 							<div class="form-group col-sm-6">
-							    <label for="inputText" class="col-sm-4 control-label">监护人2身份证</label>
-							     <label for="inputText" class="col-sm-4 control-label">410121198009125432</label>
+							    <label for="inputText" class="col-sm-6 control-label rs-right">报名状态</label>
+							    <label for="inputText" class="col-sm-6 control-label">已报名</label>
 							</div>
-							<div class="form-group col-sm-6">
-							    <label for="inputText" class="col-sm-4 control-label">学生类型</label>
-							    <label for="inputText" class="col-sm-4 control-label">辖区内学生</label>
 							</div>
-							<div class="form-group col-sm-6">
-							    <label for="inputText" class="col-sm-4 control-label">报名状态</label>
-							    <label for="inputText" class="col-sm-4 control-label">已报名</label>
-							</div>
-							<div class="modal-footer" style="border:none">
-					        <input type="button" class="btn btn-default less" data-dismiss="modal" value="返回"/>
-					        <input type="button" class="btn btn-primary less" value="审核通过"/>
-				            </div>
+		            	</form>
+					</div>
+					<div class="modal-footer" style="border:none">
+				        <!--<input type="button" class="btn btn-default less" data-dismiss="modal" value="返回"/>
+				        <input type="button" class="btn btn-primary less" value="审核通过"/>-->
+				        <div class="input-group pull-right" style="width: 260px; margin-right: 40px;">
+					      <input type="text" class="form-control" placeholder="输入验证信息">
+					      <span class="input-group-btn">
+					        <button class="btn btn-info" type="button">审核通过</button>
+					      </span>
 					    </div>
-		            </form>
+			        </div>
 			    </div>
 			</div>
 		</div>
