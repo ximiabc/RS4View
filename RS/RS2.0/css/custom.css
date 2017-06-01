@@ -8,11 +8,11 @@ textarea {
 :focus {
     outline: 0!important
 }
-body,
+/*body,
 html {
     height: 100%!important;
     min-height: 100%
-}
+}*/
 body {
     background: #f7f8fa;
     color: #777;
