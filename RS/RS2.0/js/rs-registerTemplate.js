@@ -8,7 +8,7 @@ function itemListfunc(){
 	$('.slot-item').each(function(){
 		itemList.push($.trim($(this).text()));
 	});
-//				console.log("itemList的类型为：" + typeof(itemList) + "\nitemList的长度为："+itemList.length + "\nitemList的值为："+itemList);
+//	console.log("itemList的类型为：" + typeof(itemList) + "\nitemList的长度为："+itemList.length + "\nitemList的值为："+itemList);
 	return itemList;
 }
 /*
@@ -28,8 +28,6 @@ $('#slot-list').on('mousedown','.slot-item .glyphicon',function(e){
 		$('#editModal').modal('hide');
 		$('#rs-down').prop("disabled",true);
 		$('#rs-saveItem').removeClass("hidden");
-		console.log(0-0);
-		console.log('***');
 	});
 	//点击修改，修改此节点值
 	$('#rs-modalEdit').click(function (e){
