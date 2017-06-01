@@ -1,3 +1,7 @@
+function setDisabled(){
+	$('#rs-up').prop("disabled",true);
+	$('#rs-modalDelete').prop("disabled",true);
+}
 function itemListfunc(){
 	//获取当前页面上字段名列表中的值
 	var itemList = [];
@@ -43,6 +47,8 @@ $('#slot-list').on('mousedown','.slot-item .glyphicon',function(e){
 });
 //点击添加
 $('#rs-addItem').click(function(){
+	//addId的'items'为字段序号////////////////////
+	var addId = 'items' + ($('.slot-item').length + 1);
 	var addText = $.trim($('#rs-addItemText').val());
 	var itemList = [];
 	itemList = itemListfunc();
@@ -51,7 +57,7 @@ $('#rs-addItem').click(function(){
 	if($.inArray(addText,itemList) != -1){alert("已存在此字段名。");return;}
 	if($('.slot-item').length >= 40){alert("字段数量过多，无法添加。");return;}
 	//缺少一套对添加字段的校验
-	$('#slot-list').append('<li class="list-group-item slot-item">'+addText+
+	$('#slot-list').append('<li id='+addId+' class="list-group-item slot-item">'+addText+
 		'<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span></li>');
 	$('#rs-addItemText').val('');
 	$('#rs-down').prop("disabled",true);
@@ -60,7 +66,10 @@ $('#rs-addItem').click(function(){
 //点击保存
 $('#rs-saveItem').click(function(){
 	var itemList = [];
-	itemList = itemListfunc();
+	$('.slot-item').each(function(){
+		itemList.push($(this).attr('id')+':'+$.trim($(this).text()));
+	});
+//	console.log("itemList的类型为：" + typeof(itemList) + "\nitemList的长度为："+itemList.length + "\nitemList的值为："+itemList);
 	$('#rs-saveItem').addClass("hidden");
 	$('#rs-down').prop("disabled",false);
 //				$('#rs-down').removeProp("disabled");

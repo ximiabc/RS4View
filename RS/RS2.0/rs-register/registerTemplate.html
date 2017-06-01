@@ -45,7 +45,7 @@
 					<div class="col-md-offset-0 col-md-8 col-xs-offset-1 col-xs-10">
 						<div class="btn-group btn-group-justified" role="group">
 							<div class="btn-group" role="group">
-								<button type="button" data-toggle="modal" data-target="#uploadModal" class="btn btn-default btn-info btn-lg">
+								<button id="rs-up" type="button" data-toggle="modal" data-target="#uploadModal" class="btn btn-default btn-info btn-lg">
 									<span class="glyphicon glyphicon-download" aria-hidden="true"></span>
 									上传报名表
 								</button>
@@ -60,16 +60,16 @@
 						<button id="rs-saveItem" type="button" class="btn btn-warning btn-block hidden">保存</button>
 						<div id="dragslot" class="slot">
 							<ul id="slot-list" class="list-group slot-list text-center" style="margin-bottom: 0px;">
-								<li class="list-group-item slot-item">姓名
+								<li id='i1' class="list-group-item slot-item">姓名
 									<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
 								</li>
-								<li class="list-group-item slot-item">性别
+								<li id='' class="list-group-item slot-item">性别
 									<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
 								</li>
-								<li class="list-group-item slot-item">民族
+								<li id='i2' class="list-group-item slot-item">民族
 									<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
 								</li>
-								<li class="list-group-item slot-item">身份证号
+								<li id='i3' class="list-group-item slot-item">身份证号
 									<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
 								</li>
 								<li class="list-group-item slot-item">报名学校
@@ -164,6 +164,10 @@
 		<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/dragslot.js" type="text/javascript" charset="utf-8"></script>
 		<script>
+			function setDisabled(){
+				$('#rs-up').prop("disabled",true);
+				$('#rs-modalDelete').prop("disabled",true);
+			}
 			function itemListfunc(){
 				//获取当前页面上字段名列表中的值
 				var itemList = [];
@@ -190,8 +194,6 @@
 					$('#editModal').modal('hide');
 					$('#rs-down').prop("disabled",true);
 					$('#rs-saveItem').removeClass("hidden");
-					console.log(0-0);
-					console.log('***');
 				});
 				//点击修改，修改此节点值
 				$('#rs-modalEdit').click(function (e){
@@ -209,6 +211,8 @@
 			});
 			//点击添加
 			$('#rs-addItem').click(function(){
+				//addId的'items'为字段序号////////////////////
+				var addId = 'items' + ($('.slot-item').length + 1);
 				var addText = $.trim($('#rs-addItemText').val());
 				var itemList = [];
 				itemList = itemListfunc();
@@ -217,7 +221,7 @@
 				if($.inArray(addText,itemList) != -1){alert("已存在此字段名。");return;}
 				if($('.slot-item').length >= 40){alert("字段数量过多，无法添加。");return;}
 				//缺少一套对添加字段的校验
-				$('#slot-list').append('<li class="list-group-item slot-item">'+addText+
+				$('#slot-list').append('<li id='+addId+' class="list-group-item slot-item">'+addText+
 					'<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span></li>');
 				$('#rs-addItemText').val('');
 				$('#rs-down').prop("disabled",true);
@@ -226,7 +230,11 @@
 			//点击保存
 			$('#rs-saveItem').click(function(){
 				var itemList = [];
-				itemList = itemListfunc();
+				$('.slot-item').each(function(){
+					itemList.push($(this).attr('id')+':'+$.trim($(this).text()));
+				});
+				console.log(itemList);
+//				console.log("itemList的类型为：" + typeof(itemList) + "\nitemList的长度为："+itemList.length + "\nitemList的值为："+itemList);
 				$('#rs-saveItem').addClass("hidden");
 				$('#rs-down').prop("disabled",false);
 //				$('#rs-down').removeProp("disabled");
