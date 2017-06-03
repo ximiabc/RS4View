@@ -8,6 +8,7 @@
 		<script src="../js/jquery-3.0.0.min.js"></script>
 		<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 		<script src="../js/Formtext.js"></script>
+		<script src="../js/rs-table.js"></script>
 		<style>
 		    .rs-school-height{margin-top: 30px;padding-bottom:20px;}
 		    .rs-people:hover{text-decoration: none;cursor: pointer;}
@@ -68,33 +69,48 @@
 							<td>23743253</td>
 							<td>343537</td>
 							<td>45374353</td>
-							<td><a class="rs-people" data-toggle="modal" data-target="#myModal-3" title="限制报名人数">45374353</a></td>
+							<td>1234</td>
+							<!--<td><a class="rs-people" data-toggle="modal" data-target="#myModal-3" title="限制报名人数">45374353</a></td>-->
 							<td>faggagag</td>
 							<td>
 								<input class="btn btn-default" type="submit" value="删除">
-								<button class="btn btn-default" type="submit" data-toggle="modal" data-target="#myModal-2">更改</button>
+								<button class="btn btn-default btn-modal" type="button" data-toggle="modal" data-target="#myModal-2">更改</button>
 							</td>
 						</tr>
 						<tr>
-							<td>23743253</td>
-							<td>343537</td>
-							<td>45374353</td>
-							<td><a class="rs-people" data-toggle="modal" data-target="#myModal-3" title="限制报名人数">45374353</a></td>
+							<td>789</td>
+							<td>789</td>
+							<td>789</td>
+							<td>1234</td>
+							<!--<td><a class="rs-people" data-toggle="modal" data-target="#myModal-3" title="限制报名人数">45374353</a></td>-->
 							<td>faggagag</td>
 							<td>
 								<input class="btn btn-default" type="submit" value="删除">
-								<button class="btn btn-default" type="submit" data-toggle="modal" data-target="#myModal-2">更改</button>
+								<button class="btn btn-default btn-modal" type="button" data-toggle="modal" data-target="#myModal-2">更改</button>
 							</td>
 						</tr>
 						<tr>
-							<td>23743253</td>
-							<td>343537</td>
-							<td>45374353</td>
-							<td><a class="rs-people" data-toggle="modal" data-target="#myModal-3" title="限制报名人数">45374353</a></td>
+							<td>123</td>
+							<td>123</td>
+							<td>123</td>
+							<td>1234</td>
+							<!--<td><a class="rs-people" data-toggle="modal" data-target="#myModal-3" title="限制报名人数">45374353</a></td>-->
 							<td>faggagag</td>
 							<td>
 								<input class="btn btn-default" type="submit" value="删除">
-								<button class="btn btn-default" type="submit" data-toggle="modal" data-target="#myModal-2">更改</button>
+								<button class="btn btn-default btn-modal" type="button" data-toggle="modal" data-target="#myModal-2">更改</button>
+							</td>
+						</tr>
+						<tr>
+							<td>456789</td>
+							<td>456789</td>
+							<td>456789</td>
+							<td>1234</td>
+							<!--<td><a class="rs-people" data-toggle="modal" data-target="#myModal-3" title="限制报名人数">45374353</a></td>-->
+							<td>faggagag</td>
+							<td>
+								<input class="btn btn-default" type="submit" value="删除">
+								<button class="btn btn-default btn-modal" type="button" data-toggle="modal" data-target="#myModal-2">更改</button>
 							</td>
 						</tr>
 					</tbody>
@@ -183,22 +199,34 @@
 				    <div class="modal-body">
 							<div class="form-group">
 							    <label class="control-label col-xs-offset-2 col-xs-2">学校账号</label>
-							    <label class="control-label col-xs-6 rs-text">100145gdsgdg48</label>
+							    <!--<label class="control-label col-xs-6 rs-text">100145gdsgdg48</label>-->
+							    <div class=" col-xs-6">
+							      <input type="text" class="form-control" id="inputText" disabled/>
+							    </div>
 							</div>
 							<div class="form-group">
 							    <label for="inputText" class="control-label col-xs-offset-2 col-xs-2">学校名称</label>
-							    <label for="inputText" class="control-label col-xs-6 control-label rs-text">正清大对我国的</label>
+							    <!--<label for="inputText" class="control-label col-xs-6 control-label rs-text">正清大对我国的</label>-->
+							    <div class=" col-xs-6">
+							      <input type="text" class="form-control" id="inputText" disabled/>
+							    </div>
 							</div>
 							<div class="form-group">
 							    <label for="inputText" class="col-xs-offset-2 col-xs-2 control-label">联系电话</label>
 							    <div class=" col-xs-6">
-							      <input type="text" class="form-control" id="inputText" placeholder="联系电话" data-vaild="^(1[\d]{10}|0\d{2,3}\-\d{7,8})$" data-errmsg="联系电话格式错误"/>
+							      <input type="text" class="form-control" id="inputText" data-vaild="^(1[\d]{10}|0\d{2,3}\-\d{7,8})$" data-errmsg="联系电话格式错误"/>
+							    </div>
+							</div>
+							<div class="form-group">
+							    <label for="inputText" class="col-xs-offset-2 col-xs-2 control-label">招生人数</label>
+							    <div class=" col-xs-6">
+							      <input type="text" class="form-control" id="inputText" data-vaild="/^[0-9]*$" data-errmsg="数字格式错误，只能填数字" />
 							    </div>
 							</div>
 							<div class="form-group">
 							    <label for="inputText" class="col-xs-offset-2 col-xs-2 control-label">相关备注</label>
 							    <div class="col-xs-6">
-							      <input type="text" class="form-control" id="inputText" placeholder="学校备注" data-vaild="^[\u4e00-\u9fa5]{2,30}$" data-errmsg="请填写学校备注，只能为中文"/>
+							      <input type="text" class="form-control" id="inputText" data-vaild="^[\u4e00-\u9fa5]{2,30}$" data-errmsg="请填写学校备注，只能为中文"/>
 							    </div>
 							</div>
 				    </div>
@@ -223,7 +251,7 @@
 							<div class="form-group">
 							    <label for="inputText" class="col-xs-offset-2 col-xs-2 control-label">更改人数</label>
 							    <div class="col-sm-6">
-							      <input type="text" class="form-control" id="inputText" placeholder="输入实际人数，认真核查！" data-vaild="/^[0-9]*$" data-errmsg="数字格式错误，只能填数字" >
+							      <input type="text" class="form-control" id="inputText" placeholder="输入实际人数，认真核查！" data-vaild="/^[0-9]*$" data-errmsg="数字格式错误，只能填数字"/>
 							    </div>
 							</div>
 					    </div>

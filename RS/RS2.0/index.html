@@ -19,13 +19,14 @@
 			#rs-pageFooter{bottom:0;text-align: center;background-color: #FFF;}
 			.rs-tab {padding-top: 103px;padding-bottom: 50px;width: 200px;height:100%;border-right: 1px solid #CCCCCC;color:#666;text-align: center;position: absolute;top: 0px;overflow: hidden;}
 			.rs-summary {line-height: 40px;cursor: pointer;font-size: 16px;position: relative;border-bottom: #ccc 1px dotted;transition: background-color .6s linear;-moz-transition: background-color .6s linear;-webkit-transition: background-color .6s linear;-o-transition: background-color .6s linear;}
-			.rs-summary:hover{color:#000;}
+			.rs-summary:hover{color:#000;text-decoration: none;}
 			.rs-summary.rs-active{background-color:#0BF;}
 			.rs-summary .glyphicon{top: 2px;left: -20px;}
+			.rs-summary .rs-choice:focus{text-decoration: none;color:#000000; font-size: 16px;}
 			.rs-detailed {display: none;}
 			.rs-detailed ul {margin: 0;padding: 0;}
 			.rs-detailed li , .rs-detailed .rs-summary{font-size: 14px;line-height: 40px;list-style: none;background-color:rgba(0,188,255,.6);border-bottom: #ccc 1px dotted;text-align: center;} 
-			.rs-detailed li a , .rs-detailed .rs-summary{color: #FFFFFF;text-decoration: none;display:inline-block;width:100%;height: 40px;}
+			.rs-detailed li a , .rs-detailed .rs-summary,.rs-summary .rs-choice{color: #FFFFFF;text-decoration: none;display:inline-block;width:100%;height: 40px;}
 			.rs-detailed li a:hover , .rs-detailed .rs-summary:hover{text-decoration: none;color:#FFFFFF; font-size: 16px;}
 			.rs-detailed li a.rs-focus , .rs-detailed .rs-summary.rs-active{color:#000000;font-size: 16px;}
 			.rs-detailed .rs-detailed li{background-color:#FFF;}
@@ -92,10 +93,9 @@
 						<li><a href="rs-register/middleRegisterTemplateOut.html" target="center">辖区外报名字段管理</a></li>
 					</ul>
 				</div>
-				<!--<ul>
-					<li><a href="rs-register/registerTime.html" target="center">报名时间管理</a></li>
-					<li><a href="rs-register/registerTemplate.html" target="center">报名字段管理</a></li>
-				</ul>-->
+				<div class="rs-summary special">
+					<a class="rs-choice" href="rs-register/reviewParameter.html" target="center">审核参数</a>
+				</div>
 			</div>
 			<!--School  -->
 			<div class="rs-summary">

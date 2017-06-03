@@ -8,6 +8,7 @@
 		<script src="../js/jquery-3.0.0.min.js"></script>
 		<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 		<script src="../js/Formtext.js"></script>
+		<script src="../js/rs-table.js"></script>
 		<style>
 		    .rs-school-height{margin-top: 30px;padding-bottom:20px;}
 		    .rs-people:hover{text-decoration: none;cursor: pointer;}
@@ -72,10 +73,8 @@
 						<td>国赛还得好贵的</td>
 						<td>国赛还得好贵的</td>
 						<td>
-							<div class="rs-school-space">
 							<input class="btn btn-default" type="submit" value="删除">
-							<button class="btn btn-default" type="submit" data-toggle="modal" data-target="#myModal-2">更改</button>
-							</div>
+							<button class="btn btn-default btn-modal" type="button" data-toggle="modal" data-target="#myModal-2">更改</button>
 						</td>
 					</tr>
 					<tr>
@@ -87,10 +86,8 @@
 						<td>国赛还得好贵的</td>
 						<td>国赛还得好贵的</td>
 						<td>
-							<div class="rs-school-space">
 							<input class="btn btn-default" type="submit" value="删除">
-							<button class="btn btn-default" type="submit" data-toggle="modal" data-target="#myModal-2">更改</button>
-							</div>
+							<button class="btn btn-default btn-modal" type="button" data-toggle="modal" data-target="#myModal-2">更改</button>
 						</td>
 					</tr>
 					<tr>
@@ -102,10 +99,8 @@
 						<td>国赛还得好贵的</td>
 						<td>国赛还得好贵的</td>
 						<td>
-							<div class="rs-school-space">
 							<input class="btn btn-default" type="submit" value="删除">
-							<button class="btn btn-default" type="submit" data-toggle="modal" data-target="#myModal-2">更改</button>
-							</div>
+							<button class="btn btn-default btn-modal" type="button" data-toggle="modal" data-target="#myModal-2">更改</button>
 						</td>
 					</tr>
 				</tbody>
@@ -131,7 +126,7 @@
 			    <div class="modal-content">
 			      <div class="modal-header">
 			        <button type="button" class="close less" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			        <h4 class="modal-title" id="myModalLabel">增加学生</h4>
+			        <h4 class="modal-title" id="myModalLabel">增加教师</h4>
 			      </div>
 			      <form class="form-horizontal">
 				    <div class="modal-body">
@@ -174,38 +169,50 @@
 			    <div class="modal-content">
 				    <div class="modal-header">
 				        <button type="button" class="close less" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				        <h4 class="modal-title" id="myModalLabel">更改学校信息</h4>
+				        <h4 class="modal-title" id="myModalLabel">更改教师信息</h4>
 				    </div>
 				    <form  class="form-horizontal">
 				    <div class="modal-body">
 							<div class="form-group">
 							    <label for="inputText" class="col-xs-offset-3 col-xs-2 control-label">学校编号</label>
-							    <label for="inputText" class="col-xs-5 control-label rs-text">100145</label>
+							    <div class="col-xs-5">
+							      <input type="text" class="form-control" id="inputText" disabled/>
+							    </div>
+							</div>
+							<div class="form-group">
+							    <label for="inputText" class="col-xs-offset-3 col-xs-2 control-label">学校名字</label>
+							    <div class="col-xs-5">
+							      <input type="text" class="form-control" id="inputText" disabled/>
+							    </div>
 							</div>
 							<div class="form-group">
 							    <label for="inputText" class="col-xs-offset-3 col-xs-2 control-label">教师编号</label>
-							    <label for="inputText" class="col-xs-5 control-label rs-text">245353</label>
+							    <div class="col-xs-5">
+							      <input type="text" class="form-control" id="inputText" disabled/>
+							    </div>
 							</div>
 							<div class="form-group">
 							    <label for="inputText" class="col-xs-offset-3 col-xs-2 control-label">教师姓名</label>
-							    <label for="inputText" class="col-xs-5 control-label rs-text">都一样</label>
+							    <div class="col-xs-5">
+							      <input type="text" class="form-control" id="inputText" disabled/>
+							    </div>
 							</div>
 							<div class="form-group">
 							    <label for="inputText" class="col-xs-offset-3 col-xs-2 control-label">联系电话</label>
 							    <div class="col-xs-5">
-							      <input type="text" class="form-control" id="inputText" placeholder="联系电话" data-vaild="^(1[\d]{10}|0\d{2,3}\-\d{7,8})$" data-errmsg="联系电话格式错误"/>
+							      <input type="text" class="form-control" id="inputText" data-vaild="^(1[\d]{10}|0\d{2,3}\-\d{7,8})$" data-errmsg="联系电话格式错误"/>
 							    </div>
 							</div>
 							<div class="form-group">
 							    <label for="inputText" class="col-xs-offset-3 col-xs-2 control-label">家庭地址</label>
 							    <div class="col-xs-5">
-							      <input type="text" class="form-control" id="inputText" placeholder="家庭地址" data-vaild="^[\u4e00-\u9fa5]{2,30}$" data-errmsg="请填写家庭住址，只能为中文"/>
+							      <input type="text" class="form-control" id="inputText" data-vaild="^[\u4e00-\u9fa5]{2,30}$" data-errmsg="请填写家庭住址，只能为中文"/>
 							    </div>
 							</div>
 							<div class="form-group">
 							    <label for="inputText" class="col-xs-offset-3 col-xs-2 control-label">相关备注</label>
 							    <div class="col-xs-5">
-							      <input type="text" class="form-control" id="inputText" placeholder="相关备注" data-vaild="^[\u4e00-\u9fa5]{2,36}$" data-errmsg="请填写相关备注，只能为中文"/>
+							      <input type="text" class="form-control" id="inputText" data-vaild="^[\u4e00-\u9fa5]{2,36}$" data-errmsg="请填写相关备注，只能为中文"/>
 							    </div>
 							</div>
 				    </div>
@@ -213,97 +220,6 @@
 					        <input type="button" class="btn btn-default less" data-dismiss="modal" value="取消"/>
 					        <input type="submit" class="btn btn-primary" value="确认更改"/>
 				    </div>
-					</form>
-			    </div>
-			</div>
-		</div>
-		<!-- Modal 3-->
-		<div class="modal fade" id="myModal-3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-			<div class="modal-dialog modal-lg" role="document">
-			    <div class="modal-content">
-				    <div class="modal-header">
-				        <button type="button" class="close less" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				        <h4 class="modal-title" id="myModalLabel">更改学生人数</h4>
-				    </div> 
-				    <form class="form-horizontal">
-					    <div class="modal-body row">
-							<div class="form-group col-xs-6">
-								    <label for="inputText" class="col-xs-4 control-label">学生编号</label>
-								    <label for="inputText" class="col-xs-4 control-label">216000062105478985</label>
-							</div>
-							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">学生姓名</label>
-							    <label for="inputText" class="col-xs-4 control-label">张宇说</label>
-							</div>
-							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">性别</label>
-							    <label for="inputText" class="col-xs-4 control-label">男</label>
-							</div>
-							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">民族</label>
-							    <label for="inputText" class="col-xs-4 control-label">汉族</label>
-							</div>
-							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">身份证号</label>
-							    <label for="inputText" class="col-xs-4 control-label">410106201005150034</label>
-							</div>
-							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">报名学校</label>
-							    <label for="inputText" class="col-xs-4 control-label">201600000621</label>
-							</div>
-							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">入学前幼儿园</label>
-							    <label for="inputText" class="col-xs-4 control-label">实验幼儿园</label>
-							</div>
-							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">家庭地址</label>
-							    <label for="inputText" class="col-xs-4 control-label">我凛真乌云社区</label>
-							</div>
-							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">家庭电话</label>
-							    <label for="inputText" class="col-xs-4 control-label">135255880563</label>
-							</div>
-							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">所在居委会</label>
-							    <label for="inputText" class="col-xs-4 control-label">老在和促进</label>
-							</div>
-							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">监护人1姓名</label>
-							    <label for="inputText" class="col-xs-4 control-label">张贝</label>
-							</div>
-							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">监护人1电话</label>
-							    <label for="inputText" class="col-xs-4 control-label">1362588062</label>
-							</div>
-							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">监护人1身份证</label>
-							    <label for="inputText" class="col-xs-4 control-label">410121198009125432</label>
-							</div>
-							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">监护人2姓名</label>
-							     <label for="inputText" class="col-xs-4 control-label">陈伟欧</label>
-							</div>
-							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">监护人2电话</label>
-							    <label for="inputText" class="col-xs-4 control-label">13679850000</label>
-							</div>
-							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">监护人2身份证</label>
-							     <label for="inputText" class="col-xs-4 control-label">410121198009125432</label>
-							</div>
-							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">学生类型</label>
-							    <label for="inputText" class="col-xs-4 control-label">辖区内学生</label>
-							</div>
-							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">报名状态</label>
-							    <label for="inputText" class="col-xs-4 control-label">已报名</label>
-							</div>
-					    </div>
-					    <div class="modal-footer">
-					        <button type="button" class="btn btn-default less" data-dismiss="modal">取消</button>
-					        <button type="submit" class="btn btn-primary less">审核通过</button>
-						</div>
 					</form>
 			    </div>
 			</div>
