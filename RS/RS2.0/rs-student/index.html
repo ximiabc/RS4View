@@ -99,7 +99,7 @@
 						<td>已提交</td>
 						<td>
 							<button class="btn btn-default" type="button" >删除</button>
-							<button class="btn btn-default btn-modal" type="button" data-toggle="modal" data-target="#myModal-2">更改</button>
+							<button id="n11" class="btn btn-default rs-modalBtn" type="button">更改</button>
 						</td>
 					</tr>
 					<tr>
@@ -118,7 +118,7 @@
 						<td>已提交</td>
 						<td>
 							<button class="btn btn-default" type="button" >删除</button>
-							<button class="btn btn-default" type="button" data-toggle="modal" data-target="#myModal-2">更改</button>
+							<button id="n22" class="btn btn-default rs-modalBtn" type="button">更改</button>
 						</td>
 					</tr>
 					<tr>
@@ -355,30 +355,30 @@
 				    <form  class="form-horizontal">
 				    <div class="modal-body row">
 							<div class="form-group col-xs-6">
-								    <label for="inputText" class="col-xs-4 control-label">学生编号</label>
+								    <label for="rs-studentAcc" class="col-xs-4 control-label">学生编号</label>
 								    <div class="col-sm-8">
-								      <input type="text" class="form-control" id="inputText" placeholder="学生编号" data-vaild="^\d{5,20}$" data-errmsg="请填写正确，至少是6位的数字"/>
+								      <input type="text" class="form-control" id="rs-studentAcc" data-vaild="^\d{5,20}$" data-errmsg="请填写正确，至少是6位的数字"/>
 								    </div>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">*学生姓名</label>
+							    <label for="rs-studentNam" class="col-xs-4 control-label">*学生姓名</label>
 							    <div class="col-sm-8">
-							      <input type="text" class="form-control" id="inputText" placeholder="姓名" data-vaild="^[\u4e00-\u9fa5]{2,5}$" data-errmsg="姓名必须为2-5位的中文"/>
+							      <input type="text" class="form-control" id="rs-studentNam" data-vaild="^[\u4e00-\u9fa5]{2,5}$" data-errmsg="姓名必须为2-5位的中文"/>
 							    </div>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">*性别</label>
+							    <label for="rs-studentSex" class="col-xs-4 control-label">*性别</label>
 							    <div class="col-sm-8">
-							         <select class="form-control">
+							         <select id="rs-studentSex" class="form-control">
 						      	           <option value="男">男</option>
 						      	           <option value="女">女</option>
 					                 </select>
 							    </div>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">*民族</label>
+							    <label for="rs-studentNat" class="col-xs-4 control-label">*民族</label>
 							    <div class="col-sm-8">
-							      <select class="form-control">
+							      <select id="rs-studentNat" class="form-control">
 						      	            <option value="汉族">汉族</option>
 					 						<option value="蒙古族">蒙古族</option>
 					 						<option value="彝族">彝族</option>
@@ -440,27 +440,27 @@
 							    </div>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">出生年月</label>
+							    <label for="rs-studentDat" class="col-xs-4 control-label">出生年月</label>
 							    <div class="col-sm-8">
-							      <input type="text" class="form-control" id="inputText" placeholder="出生年月" data-vaild="^\d{4}\-\d{1,2}\-\d{1,2}$" data-errmsg="出生日期格式错误，格式：2000-1-1"/>
+							      <input type="text" class="form-control" id="rs-studentDat" data-vaild="^\d{4}\-\d{1,2}\-\d{1,2}$" data-errmsg="出生日期格式错误，格式：2000-1-1"/>
 							    </div>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">*身份证号</label>
+							    <label for="rs-studentIDC" class="col-xs-4 control-label">*身份证号</label>
 							    <div class="col-sm-8">
-							      <input type="text" class="form-control" id="inputText" placeholder="身份证号" data-vaild="^[\dX]{18}$" data-errmsg="身份证号码格式错误，只能包含数字和字母X"/>
+							      <input type="text" class="form-control" id="rs-studentIDC" data-vaild="^[\dX]{18}$" data-errmsg="身份证号码格式错误，只能包含数字和字母X"/>
 							    </div>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">毕业学校</label>
+							    <label for="rs-studentSch" class="col-xs-4 control-label">毕业学校</label>
 							    <div class="col-sm-8">
-							      <input type="text" class="form-control" id="inputText" placeholder="毕业学校" data-vaild="^[\u4e00-\u9fa5]{2,30}$" data-errmsg="请填写毕业学校，只能为中文"/>
+							      <input type="text" class="form-control" id="rs-studentSch" data-vaild="^[\u4e00-\u9fa5]{2,30}$" data-errmsg="请填写毕业学校，只能为中文"/>
 							    </div>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">*报名学校</label>
+							    <label for="rs-studentSSch" class="col-xs-4 control-label">*报名学校</label>
 							    <div class="col-sm-8">
-							      <select class="form-control">
+							      <select id="rs-studentSSch" class="form-control">
 						      	           <option value="实验小学">实验小学</option>
 						      	           <option value="新建路小学">新建路小学</option>
 						      	           <option value="外国语小学">外国语小学</option>
@@ -469,57 +469,57 @@
 							    </div>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">*家庭地址</label>
+							    <label for="rs-studentAdd" class="col-xs-4 control-label">*家庭地址</label>
 							    <div class="col-sm-8">
-							      <input type="text" class="form-control" id="inputText" placeholder="家庭地址" data-vaild="^[\u4e00-\u9fa5]{2,30}$" data-errmsg="请填写家庭住址，只能为中文"/>
+							      <input type="text" class="form-control" id="rs-studentAdd" data-vaild="^[\u4e00-\u9fa5]{2,30}$" data-errmsg="请填写家庭住址，只能为中文"/>
 							    </div>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">所在居委会</label>
+							    <label for="rs-studentJWH" class="col-xs-4 control-label">所在居委会</label>
 							    <div class="col-sm-8">
-							      <input type="text" class="form-control" id="inputText" placeholder="所在居委会" data-vaild="^[\u4e00-\u9fa5]{2,30}$" data-errmsg="所在居委会，只能为中文"/>
+							      <input type="text" class="form-control" id="rs-studentJWH" data-vaild="^[\u4e00-\u9fa5]{2,30}$" data-errmsg="所在居委会，只能为中文"/>
 							    </div>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">*监护人1姓名</label>
+							    <label for="rs-Parent1Nam" class="col-xs-4 control-label">*监护人1姓名</label>
 							    <div class="col-sm-8">
-							      <input type="text" class="form-control" id="inputText" placeholder="监护人1姓名" data-vaild="^[\u4e00-\u9fa5]{2,5}$" data-errmsg="姓名必须为2-5位的中文"/>
+							      <input type="text" class="form-control" id="rs-Parent1Nam" data-vaild="^[\u4e00-\u9fa5]{2,5}$" data-errmsg="姓名必须为2-5位的中文"/>
 							    </div>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">*监护人1电话</label>
+							    <label for="rs-Parent1Cal" class="col-xs-4 control-label">*监护人1电话</label>
 							    <div class="col-sm-8">
-							      <input type="text" class="form-control" id="inputText" placeholder="监护人1电话" data-vaild="^(1[\d]{10}|0\d{2,3}\-\d{7,8})$" data-errmsg="联系电话格式错误"/>
+							      <input type="text" class="form-control" id="rs-Parent1Cal" data-vaild="^(1[\d]{10}|0\d{2,3}\-\d{7,8})$" data-errmsg="联系电话格式错误"/>
 							    </div>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">监护人1身份证</label>
+							    <label for="rs-Parent1IDC" class="col-xs-4 control-label">监护人1身份证</label>
 							    <div class="col-sm-8">
-							      <input type="text" class="form-control" id="inputText" placeholder="监护人1身份证" placeholder="监护人1身份证" data-vaild="^[\dX]{18}$" data-errmsg="身份证号码格式错误，只能包含数字和字母X"/>
+							      <input type="text" class="form-control" id="rs-Parent1IDC" data-vaild="^[\dX]{18}$" data-errmsg="身份证号码格式错误，只能包含数字和字母X"/>
 							    </div>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">监护人2姓名</label>
+							    <label for="rs-Parent2Nam" class="col-xs-4 control-label">监护人2姓名</label>
 							    <div class="col-sm-8">
-							      <input type="text" class="form-control" id="inputText" placeholder="监护人2姓名" data-vaild="^[\u4e00-\u9fa5]{2,5}$" data-errmsg="姓名必须为2-5位的中文"/>
+							      <input type="text" class="form-control" id="rs-Parent2Nam" data-vaild="^[\u4e00-\u9fa5]{2,5}$" data-errmsg="姓名必须为2-5位的中文"/>
 							    </div>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">监护人2电话</label>
+							    <label for="rs-Parent2Cal" class="col-xs-4 control-label">监护人2电话</label>
 							    <div class="col-sm-8">
-							      <input type="text" class="form-control" id="inputText" placeholder="监护人2电话" data-vaild="^(1[\d]{10}|0\d{2,3}\-\d{7,8})$" data-errmsg="联系电话格式错误"/>
+							      <input type="text" class="form-control" id="rs-Parent2Cal" data-vaild="^(1[\d]{10}|0\d{2,3}\-\d{7,8})$" data-errmsg="联系电话格式错误"/>
 							    </div>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">监护人2身份证</label>
+							    <label for="rs-Parent2IDC" class="col-xs-4 control-label">监护人2身份证</label>
 							    <div class="col-sm-8">
-							      <input type="text" class="form-control" id="inputText" placeholder="监护人2身份证" placeholder="监护人1身份证" data-vaild="^[\dX]{18}$" data-errmsg="身份证号码格式错误，只能包含数字和字母X"/>
+							      <input type="text" class="form-control" id="rs-Parent2IDC" data-vaild="^[\dX]{18}$" data-errmsg="身份证号码格式错误，只能包含数字和字母X"/>
 							    </div>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">学生类型</label>
+							    <label for="rs-studentKin" class="col-xs-4 control-label">学生类型</label>
 							    <div class="col-sm-8">
-							      <select class="form-control">
+							      <select id="rs-studentKin" class="form-control">
 						      	            <option>辖区内儿童</option>
 											<option>非辖区儿童</option>
 											<option>留守儿童</option>
@@ -529,9 +529,9 @@
 							    </div>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">报名状态</label>
+							    <label for="rs-studentSta" class="col-xs-4 control-label">报名状态</label>
 							    <div class="col-sm-8">
-							      <select class="form-control">
+							      <select id="rs-studentSta" class="form-control">
 						      	            <option>未提交</option>
 											<option>已提交</option>
 											<option>申请撤回</option>
@@ -659,6 +659,29 @@
 				$('.modal-body .form-group').find("div").removeClass("has-error");
 				$('.modal-body .form-group').find("div").removeClass("has-success");
 			}
+			//设置模态框值
+			$('.rs-modalBtn').click(function(){
+				var num = $(this).attr('id').slice(1);
+				$('#rs-studentAcc').val(num+123);
+				$('#rs-studentNam').val(num+123);
+				$('#rs-studentSex').val('男');
+				$('#rs-studentNat').val('回族');
+				$('#rs-studentDat').val(num+123);
+				$('#rs-studentIDC').val(num+123);
+				$('#rs-studentSch').val(num+123);
+				$('#rs-studentSSch').val('金华小学');
+				$('#rs-studentAdd').val(num+123);
+				$('#rs-studentJWH').val(num+123);
+				$('#rs-Parent1Nam').val(num+123);
+				$('#rs-Parent1Cal').val(num+123);
+				$('#rs-Parent1IDC').val(num+123);
+				$('#rs-Parent2Nam').val(num+123);
+				$('#rs-Parent2Cal').val(num+123);
+				$('#rs-Parent2IDC').val(num+123);
+				$('#rs-studentKin').val('三类儿童');
+				$('#rs-studentSta').val('已撤回');
+				$('#myModal-2').modal('show');
+			});
 		</script>
 	</body>
 </html>
