@@ -34,18 +34,18 @@
 					<form class="form-inline pull-right">
 						<!--下拉选项框-->
 					   <select name="select_year" class="form-control">
-							<option selected="selected" value="1">2017</option>
-							<option value="2">2016</option>
+							<option selected="selected" textue="1">2017</option>
+							<option textue="2">2016</option>
 						</select>
 						<select name="select_name" class="form-control">
-							<option selected="selected" value="1">关联查询</option>
-							<option value="2">学校编号</option>
-				    		<option value="3">学校名称</option>
-				    		<option value="4">学生编号</option>
-				    		<option value="5">学生姓名</option>
-				    		<option value="6">未报名</option>
-				    		<option value="7">已报名</option>
-				    		<option value="8">申请撤回</option>
+							<option selected="selected" textue="1">关联查询</option>
+							<option textue="2">学校编号</option>
+				    		<option textue="3">学校名称</option>
+				    		<option textue="4">学生编号</option>
+				    		<option textue="5">学生姓名</option>
+				    		<option textue="6">未报名</option>
+				    		<option textue="7">已报名</option>
+				    		<option textue="8">申请撤回</option>
 						</select>
 					    <input type="text" class="form-control" placeholder="number">
 					    <button type="submit" class="form-control">检索</button>	
@@ -87,7 +87,7 @@
 						<td>13456487224</td>
 						<td>辖区内儿童</td>
 						<td>已提交</td>
-						<td><button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal-3">详情</button></td>
+						<td><button id="num11" type="button" class="btn btn-default rs-modalBtn" data-toggle="modal" data-target="#myModal-3">详情</button></td>
 					</tr>
 					<tr>
 						<td>1</td>
@@ -103,7 +103,7 @@
 						<td>13456487224</td>
 						<td>辖区内儿童</td>
 						<td>已提交</td>
-						<td><button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal-3">详情</button></td>
+						<td><button id="num11" type="button" class="btn btn-default rs-modalBtn" data-toggle="modal" data-target="#myModal-3">详情</button></td>
 					</tr>
 					<tr>
 						<td>1</td>
@@ -119,7 +119,7 @@
 						<td>13456487224</td>
 						<td>辖区内儿童</td>
 						<td>已提交</td>
-						<td><button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal-3">详情</button></td>
+						<td><button id="num11" type="button" class="btn btn-default rs-modalBtn" data-toggle="modal" data-target="#myModal-3">详情</button></td>
 					</tr>
 				</tbody>
 				</table>
@@ -149,76 +149,76 @@
 				    <form class="form-horizontal">
 					    <div class="modal-body row">
 							<div class="form-group col-xs-6">
-								    <label for="inputText" class="col-xs-4 control-label">学生编号</label>
-								    <label for="inputText" class="col-xs-4 control-label rs-text">216000062105478985</label>
+								    <label class="col-xs-6 control-label">学生编号</label>
+								    <label class="col-xs-6 control-label rs-text" id="rs-audit1">216000062105478985</label>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">学生姓名</label>
-							    <label for="inputText" class="col-xs-4 control-label rs-text">张宇说</label>
+							    <label class="col-xs-6 control-label">学生姓名</label>
+							    <label class="col-xs-6 control-label rs-text" id="rs-audit2">张宇说</label>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">性别</label>
-							    <label for="inputText" class="col-xs-4 control-label rs-text">男</label>
+							    <label class="col-xs-6 control-label">性别</label>
+							    <label class="col-xs-6 control-label rs-text" id="rs-audit3">男</label>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">民族</label>
-							    <label for="inputText" class="col-xs-4 control-label rs-text">汉族</label>
+							    <label class="col-xs-6 control-label">民族</label>
+							    <label class="col-xs-6 control-label rs-text" id="rs-audit4">汉族</label>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">身份证号</label>
-							    <label for="inputText" class="col-xs-4 control-label rs-text">410106201005150034</label>
+							    <label class="col-xs-6 control-label">身份证号</label>
+							    <label class="col-xs-6 control-label rs-text" id="rs-audit5">410106201005150034</label>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">报名学校</label>
-							    <label for="inputText" class="col-xs-4 control-label rs-text">201600000621</label>
+							    <label class="col-xs-6 control-label">报名学校</label>
+							    <label class="col-xs-6 control-label rs-text" id="rs-audit6">201600000621</label>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">入学前幼儿园</label>
-							    <label for="inputText" class="col-xs-4 control-label rs-text">实验幼儿园</label>
+							    <label class="col-xs-6 control-label">入学前幼儿园</label>
+							    <label class="col-xs-6 control-label rs-text" id="rs-audit7">实验幼儿园</label>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">家庭地址</label>
-							    <label for="inputText" class="col-xs-4 control-label rs-text">我凛真乌云社区</label>
+							    <label class="col-xs-6 control-label">家庭地址</label>
+							    <label class="col-xs-6 control-label rs-text" id="rs-audit8">我凛真乌云社区</label>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">家庭电话</label>
-							    <label for="inputText" class="col-xs-4 control-label rs-text">135255880563</label>
+							    <label class="col-xs-6 control-label">家庭电话</label>
+							    <label class="col-xs-6 control-label rs-text" id="rs-audit9">135255880563</label>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">所在居委会</label>
-							    <label for="inputText" class="col-xs-4 control-label rs-text">老在和促进</label>
+							    <label class="col-xs-6 control-label">所在居委会</label>
+							    <label class="col-xs-6 control-label rs-text" id="rs-audit10">老在和促进</label>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">监护人1姓名</label>
-							    <label for="inputText" class="col-xs-4 control-label rs-text">张贝</label>
+							    <label class="col-xs-6 control-label">监护人1姓名</label>
+							    <label class="col-xs-6 control-label rs-text" id="rs-audit11">张贝</label>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">监护人1电话</label>
-							    <label for="inputText" class="col-xs-4 control-label rs-text">1362588062</label>
+							    <label class="col-xs-6 control-label">监护人1电话</label>
+							    <label class="col-xs-6 control-label rs-text" id="rs-audit12">1362588062</label>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">监护人1身份证</label>
-							    <label for="inputText" class="col-xs-4 control-label rs-text">410121198009125432</label>
+							    <label class="col-xs-6 control-label">监护人1身份证</label>
+							    <label class="col-xs-6 control-label rs-text" id="rs-audit13">410121198009125432</label>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">监护人2姓名</label>
-							     <label for="inputText" class="col-xs-4 control-label rs-text">陈伟欧</label>
+							    <label class="col-xs-6 control-label">监护人2姓名</label>
+							     <label class="col-xs-6 control-label rs-text" id="rs-audit14">陈伟欧</label>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">监护人2电话</label>
-							    <label for="inputText" class="col-xs-4 control-label rs-text">13679850000</label>
+							    <label class="col-xs-6 control-label">监护人2电话</label>
+							    <label class="col-xs-6 control-label rs-text" id="rs-audit15">13679850000</label>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">监护人2身份证</label>
-							     <label for="inputText" class="col-xs-4 control-label rs-text">410121198009125432</label>
+							    <label class="col-xs-6 control-label">监护人2身份证</label>
+							     <label class="col-xs-6 control-label rs-text" id="rs-audit16">410121198009125432</label>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">学生类型</label>
-							    <label for="inputText" class="col-xs-4 control-label rs-text">辖区内学生</label>
+							    <label class="col-xs-6 control-label">学生类型</label>
+							    <label class="col-xs-6 control-label rs-text" id="rs-audit17">辖区内学生</label>
 							</div>
 							<div class="form-group col-xs-6">
-							    <label for="inputText" class="col-xs-4 control-label">报名状态</label>
-							    <label for="inputText" class="col-xs-4 control-label rs-text">已报名</label>
+							    <label class="col-xs-6 control-label">报名状态</label>
+							    <label class="col-xs-6 control-label rs-text" id="rs-audit18">已报名</label>
 							</div>
 					    </div>
 					    <div class="modal-footer">
@@ -233,5 +233,30 @@
 			    </div>
 			</div>
 		</div>
+		<script type="text/javascript">
+			$('.rs-modalBtn').click(function(){
+				var num = $(this).attr('id').slice(1);
+				$('#rs-audit1').text('1');
+				$('#rs-audit2').text('2');
+				$('#rs-audit3').text('3');
+				$('#rs-audit4').text('4');
+				$('#rs-audit5').text('5');
+				$('#rs-audit6').text('6');
+				$('#rs-audit7').text('7');
+				$('#rs-audit8').text('8');
+				$('#rs-audit9').text('9');
+				$('#rs-audit10').text('10');
+				$('#rs-audit11').text('11');
+				$('#rs-audit12').text('12');
+				$('#rs-audit13').text('13');
+				$('#rs-audit14').text('13');
+				$('#rs-audit15').text('13');
+				$('#rs-audit16').text('13');
+				$('#rs-audit17').text('13');
+				$('#rs-audit18').text('13');
+				console.log(num);
+				$('#myModal-2').modal('show');
+			});
+		</script>
 	</body>
 </html>
