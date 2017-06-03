@@ -1,4 +1,4 @@
-#rs-wrap{margin-top: 30px;}
+.container{margin-top: 30px;}
 .drag-item{position: absolute;opacity: .8;}
 .placeholder{position:relative;border: 2px dashed rgba(0,188,255,.6);}
 .slot-item{padding-right:40px;line-height: 1;cursor: pointer;}
