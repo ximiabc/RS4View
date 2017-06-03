@@ -63,6 +63,8 @@ $('#rs-addItem').click(function(){
 });
 //点击保存
 $('#rs-saveItem').click(function(){
+	//ToWhere是设置post路径的变量
+	var ToWhere = $('.container').attr('id');
 	var itemList = [];
 	$('.slot-item').each(function(){
 		itemList.push($(this).attr('id')+':'+$.trim($(this).text()));
