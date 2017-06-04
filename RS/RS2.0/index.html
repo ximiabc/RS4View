@@ -5,8 +5,6 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 		<title>入学报名信息管理系统</title>
 		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
-		<script src="js/jquery-3.0.0.min.js"></script>
-		<script src="js/rs-tab.js"></script>
 		<style type="text/css">
 			body,html{height: 100%;min-width: 560px;}
 			.rs-plr5{padding-left: 5px;padding-right: 5px;}
@@ -22,11 +20,10 @@
 			.rs-summary:hover{color:#000;text-decoration: none;}
 			.rs-summary.rs-active{background-color:#0BF;}
 			.rs-summary .glyphicon{top: 2px;left: -20px;}
-			.rs-summary .rs-choice:focus{text-decoration: none;color:#000000; font-size: 16px;}
 			.rs-detailed {display: none;}
 			.rs-detailed ul {margin: 0;padding: 0;}
 			.rs-detailed li , .rs-detailed .rs-summary{font-size: 14px;line-height: 40px;list-style: none;background-color:rgba(0,188,255,.6);border-bottom: #ccc 1px dotted;text-align: center;} 
-			.rs-detailed li a , .rs-detailed .rs-summary,.rs-summary .rs-choice{color: #FFFFFF;text-decoration: none;display:inline-block;width:100%;height: 40px;}
+			.rs-detailed li a , .rs-detailed .rs-summary{color: #FFFFFF;text-decoration: none;display:inline-block;width:100%;height: 40px;}
 			.rs-detailed li a:hover , .rs-detailed .rs-summary:hover{text-decoration: none;color:#FFFFFF; font-size: 16px;}
 			.rs-detailed li a.rs-focus , .rs-detailed .rs-summary.rs-active{color:#000000;font-size: 16px;}
 			.rs-detailed .rs-detailed li{background-color:#FFF;}
@@ -93,9 +90,7 @@
 						<li><a href="rs-register/middleRegisterTemplateOut.html" target="center">辖区外报名字段管理</a></li>
 					</ul>
 				</div>
-				<div class="rs-summary special">
-					<a class="rs-choice" href="rs-register/reviewParameter.html" target="center">审核参数</a>
-				</div>
+				<a class="rs-summary" href="rs-register/reviewParameter.html" target="center">审核参数</a>
 			</div>
 			<!--School  -->
 			<div class="rs-summary">
@@ -146,5 +141,7 @@
 			<a href="help.html" target="center">使用指南</a>
 			<p>版权所有:Software Innovator &copy; 2017</p>
 		</div>
+		<script src="js/jquery-3.0.0.min.js"></script>
+		<script src="js/rs-tab.js"></script>
 	</body>
 </html>

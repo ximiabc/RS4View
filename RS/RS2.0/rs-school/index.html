@@ -8,7 +8,6 @@
 		<script src="../js/jquery-3.0.0.min.js"></script>
 		<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 		<script src="../js/Formtext.js"></script>
-		<script src="../js/rs-table.js"></script>
 		<style>
 		    .rs-school-height{margin-top: 30px;padding-bottom:20px;}
 		    .rs-people:hover{text-decoration: none;cursor: pointer;}
@@ -277,7 +276,6 @@
 			$('.less').on('click',function(){
 				posclear();
 			});
-			
 			function posclear(){
 				$('.popover').css('display','none');
 				$('.modal-body .form-group').find("div").removeClass("has-error");
@@ -286,13 +284,21 @@
 			//设置模态框值
 			$('.rs-modalBtn').click(function(){
 				var num = $(this).attr('id').slice(1);
-				$('#rs-school1').val('1');
-				$('#rs-school2').val('2');
-				$('#rs-school3').val('3');
-				$('#rs-school4').val('4');
-				$('#rs-school5').val('5');
-				console.log(num);
-				$('#myModal-2').modal('show');
+				$.ajax({ 
+					type: "GET", 	
+					url: "urlurlurl?id=" + num,
+					dataType: "json",
+					success: function(data){
+						$('#rs-school1').val(data.a);
+						$('#rs-school2').val(data.b);
+						$('#rs-school3').val(data.c);
+						$('#rs-school4').val(data.d);
+						$('#rs-school5').val(data.e);
+						$('#myModal-2').modal('show');
+					},
+					error: function(XHR){alert("获取信息失败");}
+				});
+				
 			});
 		</script>
 	</body>
