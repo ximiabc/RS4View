@@ -11,19 +11,18 @@ function itemListfunc(){
 //	console.log("itemList的类型为：" + typeof(itemList) + "\nitemList的长度为："+itemList.length + "\nitemList的值为："+itemList);
 	return itemList;
 }
-/*
- * stopImmediatePropagation
- * 阻止剩余的事件处理函数执行并且防止事件冒泡到DOM树上
- */
-$('#slot-list').on('mousedown','.slot-item .glyphicon',function(e){
-	e.stopImmediatePropagation();
-	var slotItem = $(this).parent();
-	$('#editModal').modal('show');
-	//设置模态框中文本
-	$('#rs-modalText').val($.trim(slotItem.text()));
+(function(){
+	var slotItem;
+	$('#slot-list').on('mousedown','.slot-item .glyphicon',function(e){
+		e.stopImmediatePropagation();
+		slotItem = $(this).parent();
+		$('#editModal').modal('show');
+		//设置模态框中文本
+		$('#rs-modalText').val($.trim(slotItem.text()));
+	});
 	//点击删除，删除此节点
 	$('#rs-modalDelete').click(function (e){
-		e.stopImmediatePropagation();
+		if(!slotItem){alert('操作失败,请刷新');return;}
 		slotItem.remove();
 		$('#editModal').modal('hide');
 		$('#rs-down').prop("disabled",true);
@@ -31,7 +30,7 @@ $('#slot-list').on('mousedown','.slot-item .glyphicon',function(e){
 	});
 	//点击修改，修改此节点值
 	$('#rs-modalEdit').click(function (e){
-		e.stopImmediatePropagation();
+		if(!slotItem){alert('操作失败,请刷新');return;}
 		var editText = $('#rs-modalText').val();
 		var itemList = [];
 		itemList = itemListfunc();
@@ -42,7 +41,7 @@ $('#slot-list').on('mousedown','.slot-item .glyphicon',function(e){
 		$('#rs-down').prop("disabled",true);
 		$('#rs-saveItem').removeClass("hidden");
 	});
-});
+})();
 //点击添加
 $('#rs-addItem').click(function(){
 	//addId的'items'为字段序号////////////////////
