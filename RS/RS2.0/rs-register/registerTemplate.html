@@ -19,6 +19,7 @@
 			}
 			.slot-item .glyphicon:hover{background-color: rgba(0,188,255,.6);}
 			.btn-group-justified  .glyphicon{top: 3px;}
+			.modal-body .input-group{margin: 10px;}
 		</style>
 	</head>
 	<body>
@@ -148,8 +149,18 @@
 					</div>
 					<div class="modal-body">
 					    <div class="input-group">
-							<div class="input-group-addon">字段名</div>
+							<div class="input-group-addon">字段名称</div>
 							<input type="text" id="rs-modalText" class="form-control">
+						</div>
+						<div class="input-group">
+							<div class="input-group-addon">内容填写规则</div>
+							<select class="form-control">
+								<option>无</option>
+								<option>仅数字</option>
+								<option>仅汉字</option>
+								<option>手机号（11位数字）</option>
+								<option>身份证号（18位数字）</option>
+							</select>
 						</div>
 					</div>
 		    		<div class="modal-footer">
