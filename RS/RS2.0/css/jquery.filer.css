@@ -322,14 +322,13 @@ span.jFiler-icon-file.f-audio:after {
 }
 
 /* Thumbnails: Grid */
-.jFiler-items-grid .jFiler-item {
+/*.jFiler-items-grid .jFiler-item {
     float: left;
-}
+}*/
 
 .jFiler-items-grid .jFiler-item .jFiler-item-container {
     position: relative;
-    margin: 0 20px 30px 0;
-    padding: 10px;
+    padding: 10px 10px 5px;
     border: 1px solid #e1e1e1;
     border-radius: 3px;
     background: #fff;
@@ -359,7 +358,7 @@ span.jFiler-icon-file.f-audio:after {
 }
 
 .jFiler-items-grid .jFiler-item .jFiler-item-container .jFiler-item-thumb span.jFiler-icon-file {
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .jFiler-items-grid .jFiler-item-thumb-image.fi-loading {
@@ -411,8 +410,7 @@ span.jFiler-icon-file.f-audio:after {
 }
 
 .jFiler-items-grid .jFiler-item .jFiler-item-container .jFiler-item-assets {
-    margin-top: 10px;
-    color: #999;
+   	color: #999;
 }
 
 .jFiler-items-grid .jFiler-item .jFiler-item-container .jFiler-item-assets .text-success {

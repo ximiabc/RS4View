@@ -596,8 +596,8 @@ ul.list-style4 li .text-muted {
 
 .jFiler-items-grid .jFiler-item .jFiler-item-container .jFiler-item-thumb {
 	width: 100%;
-   height: 150px;
-   min-height: 115px;
+	height: 105px;
+    min-height: 105px;
 }
 
 .jFiler-item-container {
