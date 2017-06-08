@@ -1,13 +1,19 @@
 .container{margin-top: 30px;}
-.drag-item{position: absolute;opacity: .8;}
+.drag-item{position: absolute;width:360px;opacity: .8;}
 .placeholder{position:relative;border: 2px dashed rgba(0,188,255,.6);}
-.slot-item{padding-right:40px;line-height: 1;cursor: pointer;}
-.slot-item .glyphicon{
-	position: absolute;top: 0;right: 0;padding: 10px 15px;
+.slot-item , .rs-baoliu{padding-right:45px;line-height: 1;cursor: pointer;font-size: 0;}
+.rs-baoliu{background-color: #eee;}
+.slot-item .rs-itemName,.slot-item .rs-itemRule,
+.rs-baoliu .rs-itemName,.rs-baoliu .rs-itemRule{
+	display:inline-block;width: 50%;font-size: 14px;
+}
+.slot-item .glyphicon , .rs-baoliu .glyphicon{
+	position: absolute;top: 0;right: 0;padding: 10px 15px;font-size: 14px;
 	transition: background-color .3s;
 	-moz-transition: background-color .3s;
 	-webkit-transition: background-color .3s;
 	-o-transition: background-color .3s;
 }
 .slot-item .glyphicon:hover{background-color: rgba(0,188,255,.6);}
-.btn-group-justified  .glyphicon{top: 3px;}
+.btn-group-justified .glyphicon{top: 3px;}
+.modal-body .input-group{margin: 10px;}

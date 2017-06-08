@@ -26,51 +26,68 @@
 						</div>
 					</div>
 					<button id="rs-saveItem" type="button" class="btn btn-warning btn-block hidden">保存</button>
+					<ul class="list-group text-center" style="margin-bottom: 0px;">
+						<li class="list-group-item rs-baoliu">
+							<span class="rs-itemName">姓名1</span>
+							<span id="rule4" class="rs-itemRule">仅汉字</span>
+							<span class="glyphicon glyphicon-ban-circle pull-right" aria-hidden="true"></span>
+						</li>
+						<li class="list-group-item rs-baoliu">
+							<span class="rs-itemName">姓名2</span>
+							<span id="rule4" class="rs-itemRule">仅汉字</span>
+							<span class="glyphicon glyphicon-ban-circle pull-right" aria-hidden="true"></span>
+						</li>
+						<li class="list-group-item rs-baoliu">
+							<span class="rs-itemName">姓名3</span>
+							<span id="rule4" class="rs-itemRule">仅汉字</span>
+							<span class="glyphicon glyphicon-ban-circle pull-right" aria-hidden="true"></span>
+						</li>
+					</ul>
 					<div id="dragslot" class="slot">
 						<ul id="slot-list" class="list-group slot-list text-center" style="margin-bottom: 0px;">
-							<li class="list-group-item slot-item">姓名
+							<li class="list-group-item slot-item">
+								<span id='i1' class="rs-itemName">姓名</span>
+								<span id="rule4" class="rs-itemRule">仅汉字</span>
 								<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
 							</li>
-							<li class="list-group-item slot-item">性别
+							<li class="list-group-item slot-item">
+								<span id='' class="rs-itemName">性别</span>
+								<span id="rule1" class="rs-itemRule">无</span>
 								<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
 							</li>
-							<li class="list-group-item slot-item">民族
+							<li class="list-group-item slot-item">
+								<span id='i2' class="rs-itemName">民族</span>
+								<span id="rule1" class="rs-itemRule">无</span>
 								<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
 							</li>
-							<li class="list-group-item slot-item">身份证号
+							<li class="list-group-item slot-item">
+								<span id='i3' class="rs-itemName">身份证号</span>
+								<span id="rule8" class="rs-itemRule">身份证号（18位数字）</span>
 								<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
 							</li>
-							<li class="list-group-item slot-item">报名学校
+							<li class="list-group-item slot-item">
+								<span class="rs-itemName">报名学校</span>
+								<span id="rule1" class="rs-itemRule">无</span>
 								<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
 							</li>
-							<li class="list-group-item slot-item">入学前幼儿园
+							<li class="list-group-item slot-item">
+								<span class="rs-itemName">入学前幼儿园</span>
+								<span id="rule1" class="rs-itemRule">无</span>
 								<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
 							</li>
-							<li class="list-group-item slot-item">家庭地址
+							<li class="list-group-item slot-item">
+								<span class="rs-itemName">家庭地址</span>
+								<span id="rule1" class="rs-itemRule">无</span>
 								<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
 							</li>
-							<li class="list-group-item slot-item">所在居委会
+							<li class="list-group-item slot-item">
+								<span class="rs-itemName">所在居委会</span>
+								<span id="rule1" class="rs-itemRule">无</span>
 								<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
 							</li>
-							<li class="list-group-item slot-item">监护人1姓名
-								<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
-							</li>
-							<li class="list-group-item slot-item">监护人1电话
-								<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
-							</li>
-							<li class="list-group-item slot-item">监护人1身份证号
-								<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
-							</li>
-							<li class="list-group-item slot-item">监护人2姓名
-								<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
-							</li>
-							<li class="list-group-item slot-item">监护人2电话
-								<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
-							</li>
-							<li class="list-group-item slot-item">监护人2身份证号
-								<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
-							</li>
-							<li class="list-group-item slot-item">学生类型
+							<li class="list-group-item slot-item">
+								<span class="rs-itemName">学生类型</span>
+								<span id="rule1" class="rs-itemRule">无</span>
 								<span class="glyphicon glyphicon-edit pull-right" aria-hidden="true"></span>
 							</li>
 						</ul>
@@ -116,6 +133,19 @@
 					    <div class="input-group">
 							<div class="input-group-addon">字段名</div>
 							<input type="text" id="rs-modalText" class="form-control">
+						</div>
+						<div class="input-group">
+							<div class="input-group-addon">内容填写规则</div>
+							<select id="rs-modalSelect" class="form-control">
+								<option value="rule1">无</option>
+								<option value="rule2">非空</option>
+								<option value="rule3">仅数字</option>
+								<option value="rule4">仅汉字</option>
+								<option value="rule5">邮箱格式</option>
+								<option value="rule6">日期格式</option>
+								<option value="rule7">手机号（11位数字）</option>
+								<option value="rule8">身份证号（18位数字）</option>
+							</select>
 						</div>
 					</div>
 		    		<div class="modal-footer">
