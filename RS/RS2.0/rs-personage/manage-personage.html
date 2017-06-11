@@ -8,28 +8,17 @@
    		<script src="../js/jquery-3.0.0.min.js"></script>
    		<script src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
    		<script src="../js/Formtext.js"></script>
-   		<script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
-   		<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
    		<style type="text/css">
-  		 .rs-location{
-  		 	padding-left: 30%;
-  		 	padding-top: 10%;
-  		 	padding-right: 30%;
-  		 }
-  		 .rs-width{
-  		 	width:60%;
-  		 }	
-  		 /*td{
-  		 	height: 50px;
-  		 }*/
+	   		.rs-content{margin-top: 80px;width: 500px;}
+			.rs-font{font-size: 16px;}
    		</style>
 	</head>
 	<body>
-		<div class="rs-infoBox table-responsive col-xs-12 rs-location">
-				<table class="table table-striped table-bordered table-hover " style="text-align:center; font-size: large;">
+		<div class="rs-content center-block">
+				<table class="table table-striped table-bordered table-hover text-center rs-font">
 					<thead>
 						<tr class="info">
-							<td colspan="2" style="text-align: left;">个人信息</td>
+							<td colspan="2" class="text-left">个人信息</td>
 						</tr>
 					</thead>
 					<tbody>
@@ -57,7 +46,7 @@
 					</tbody>
 					<tfoot>
 						<tr>
-							<td colspan="2"><button class="btn btn-info" type="submit" data-toggle="modal" data-target="#myModal" style="width: 30%;" >修改</button></td>	
+							<td colspan="2"><button class="btn btn-info" type="submit" data-toggle="modal" data-target="#myModal">修改</button></td>	
 						</tr>
 					</tfoot>
 				</table>
@@ -74,57 +63,68 @@
 							修改权限
 						</h4>
 					</div>
-				<div class="modal-body">
 					<form class="form-horizontal" id="myform">
-		 			  <div class="form-group">
-					    	<label for="input1" class="col-xs-3 control-label">账号：</label>
-					    	<div class="col-xs-9 rs-width">
-					      	<input type="text" class="form-control" id="input1" placeholder="账号" data-vaild="^\d{5,20}$" data-errmsg="请填写正确，至少是6位的数字"/>
-					    	</div>
-					  </div>
-					  <div class="form-group">
-					    <label for="input2" class="col-xs-3 control-label">电话：</label>
-						    <div class="col-xs-9 rs-width">
-						      <input type="text" class="form-control" id="input2" placeholder="电话" data-vaild="^(1[\d]{10}|0\d{2,3}\-\d{7,8})$" data-errmsg="联系电话格式错误"/>
-						    </div>
-					  </div>
-					  <div class="form-group">
-						 	<label for="password1" class="col-xs-3 control-label">密码：</label>
-							<div class="col-xs-9 rs-width">
-								<input type="password" class="form-control" "password" id="password1" placeholder="请输入密码" data-vaild="^[a-zA-Z\d_]{6}$" data-errmsg="请输入6位密码"/>
-							</div>
-					  </div>
-					  <div class="form-group">
-						 	<label for="password2" class="col-xs-3 control-label">新密码：</label>
-							<div class="col-xs-9 rs-width">
-								<input type="password" class="form-control" id="password" name="password" placeholder="请输入新密码" data-vaild="^[a-zA-Z\d_]{6}$" data-errmsg="请输入6位密码"/>
-							</div>
+						<div class="modal-body">
+				 			  <div class="form-group">
+							    	<label for="input1" class="col-xs-4 control-label text-right">账号</label>
+							    	<div class="col-xs-6">
+							      	<input type="text" class="form-control" id="input1" placeholder="账号" data-vaild="^\d{5,20}$" data-errmsg="请填写正确，至少是6位的数字"/>
+							    	</div>
+							  </div>
+							  <div class="form-group">
+							    <label for="input2" class="col-xs-4 control-label text-right">电话</label>
+								    <div class="col-xs-6 ">
+								      <input type="text" class="form-control" id="input2" placeholder="电话" data-vaild="^(1[\d]{10}|0\d{2,3}\-\d{7,8})$" data-errmsg="联系电话格式错误"/>
+								    </div>
+							  </div>
+							  <div class="form-group">
+								 	<label for="password1" class="col-xs-4 control-label text-right">密码</label>
+									<div class="col-xs-6">
+										<input type="password" class="form-control" "password" id="password1" placeholder="请输入密码" data-vaild="^[a-zA-Z\d_]{6}$" data-errmsg="请输入6位密码"/>
+									</div>
+							  </div>
+							  <div class="form-group">
+								 	<label for="password2" class="col-xs-4 control-label text-right">新密码</label>
+									<div class="col-xs-6">
+										<input type="password" class="form-control" id="password" name="password" placeholder="请输入新密码" data-vaild="^[a-zA-Z\d_]{6}$" data-errmsg="请输入6位密码"/>
+									</div>
+								</div>
+								    
+							  <div class="form-group">
+								 	<label for="password3" class="col-xs-4 control-label text-right">确认密码</label>
+									<div class="col-xs-6">
+										<input type="password" class="form-control" id="password_again" name="password_again" placeholder="请输入确认密码"  data-errmsg="密码输入不一致"/>
+									</div>
+							  </div>
+							  <div class="form-group">
+								    <label for="input3" class="col-xs-4 control-label text-right">备注</label>
+								    <div class="col-xs-6">
+								      <input type="text" class="form-control" id="input3" placeholder="备注" data-vaild="^[\u4e00-\u9fa5]{2,36}$" data-errmsg="请填写备注，只能为中文"/>
+								    </div>
+							  </div>
+						   
 						</div>
-						    
-					  <div class="form-group">
-						 	<label for="password3" class="col-xs-3 control-label"  >确认密码：</label>
-							<div class="col-xs-9 rs-width">
-								<input type="password" class="form-control" id="password_again" name="password_again" placeholder="请输入确认密码" data-vaild="^[a-zA-Z\d_]{6}$" data-errmsg="请输入6位密码"/>
-							</div>
-					  </div>
-					  <div class="form-group">
-						    <label for="input3" class="col-xs-3 control-label">备注：</label>
-						    <div class="col-sm-9 rs-width">
-						      <input type="text" class="form-control" id="input3" placeholder="账号">
-						    </div>
-					  </div>
-				   </form>	
-				</div>
-					    <div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal">关闭
-							</button>
-							<button type="button" class="btn btn-primary">
-								提交更改
-							</button>
+						<div class="modal-footer">
+						    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+							<button type="submit" class="btn btn-primary">提交更改</button>
 						</div>
+				</form>			
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal -->
 		<script type="text/javascript">
+		      $("#password_again").on('blur',function(){
+//		      	console.log($(this).val());
+		      	var pas1=$('#password').val();
+		      	var pas2=$('#password_again').val();
+				if(pas1 == pas2){
+					$(this).parent().removeClass('has-error').addClass('has-success');
+					$(this).popover("destroy");
+				}else{
+					$(this).parent().removeClass('has-success').addClass('has-error');
+					$(this).data("toogle", "top").data("placement", "top").data("container", "body").data("content", $(this).data("errmsg")).popover({"trigger":"manual"}).popover("show");
+				}
+		      });
+		 
               $("form").Vaild();
               
               setInterval(function(){
@@ -142,17 +142,6 @@
 				$('.modal-body .form-group').find("div").removeClass("has-error");
 				$('.modal-body .form-group').find("div").removeClass("has-success");
 			});
-		</script>
-		<script>
-		jQuery.validator.setDefaults({
-		  debug: true,
-		  success: "valid"});$( "#myform" ).validate({
-		  rules: {
-		    password: "required",
-		    password_again: {
-		      equalTo: "#password"
-		    }
-		  }});
 		</script>
 	</body>
 </html>
