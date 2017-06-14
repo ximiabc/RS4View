@@ -22,7 +22,8 @@
 			function redirect() {
 				var num = $.trim($('#countDown').text()-1);
 				if (num < 0) {
-					location.replace("http://www.baidu.com");
+					window.location.href = 'http://www.baidu.com';
+//					location.replace("http://www.baidu.com");
 					timer.clearInterval();
 				}else{$('#countDown').text(num);}
 			} 

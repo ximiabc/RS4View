@@ -1,11 +1,12 @@
-$('.form_date').datetimepicker({
+$('.form_datetime').datetimepicker({
     language:  'zh-CN',
-    format: "yyyy-mm-dd",
+    format: "yyyy-mm-dd hh:ii",
     weekStart: 0,
+    todayBtn:  1,
+    showMeridian: 1,
 	autoclose: 1,
 	todayHighlight: 1,
 	startView: 2,
-	minView: 2,
 	forceParse: 0
 });
 $(function () {
